@@ -1,0 +1,20 @@
+
+.bg-image {
+    background-image:url("garage.jpg");
+    background-position: center center;
+    background-size: cover;
+    height: 300px;
+}
+
+#bedrijfsnaamTitel {
+    color: white;
+}
+
+.topbar {
+    background-color: #176c48;
+    padding: 0;
+}
+
+.secondtopbar {
+    padding: 0px;
+}
