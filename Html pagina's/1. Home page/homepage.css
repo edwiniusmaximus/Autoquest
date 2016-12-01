@@ -1,15 +1,3 @@
-
-.bg-image {
-    background-image:url("garage.jpg");
-    background-position: center center;
-    background-size: cover;
-    height: 300px;
-}
-
-#bedrijfsnaamTitel {
-    color: white;
-}
-
 .topbar {
     background-color: #176c48;
     padding: 0;
@@ -26,16 +14,14 @@
 /*slider*/
 .slider{
     width: 100%;
-    height: 200px;
 }
 
 .carousel .item {
-    height: 200px;
+    height: 350px;
 }
 
-.carousel img {
-    position: absolute;
-    min-height: 200px;
+.item img {
+    height: 350px;
 }
 
 .fade-carousel .carousel-inner .item .hero {
