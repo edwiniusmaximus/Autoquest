@@ -19,6 +19,39 @@
     padding: 0px;
 }
 
-header {
-    padding-top: 50px;
+.container {
+    margin-top: 20px;
+}
+
+/*slider*/
+.slider{
+    width: 100%;
+    height: 200px;
+}
+
+.carousel .item {
+    height: 200px;
+}
+
+.carousel img {
+    position: absolute;
+    min-height: 200px;
+}
+
+.fade-carousel .carousel-inner .item .hero {
+    opacity: 0;
+    -webkit-transition: 2s all ease-in-out .1s;
+    -moz-transition: 2s all ease-in-out .1s;
+    -ms-transition: 2s all ease-in-out .1s;
+    -o-transition: 2s all ease-in-out .1s;
+    transition: 2s all ease-in-out .1s;
+}
+
+.fade-carousel .carousel-inner .item.active .hero {
+    opacity: 1;
+    -webkit-transition: 2s all ease-in-out .1s;
+    -moz-transition: 2s all ease-in-out .1s;
+    -ms-transition: 2s all ease-in-out .1s;
+    -o-transition: 2s all ease-in-out .1s;
+    transition: 2s all ease-in-out .1s;
 }

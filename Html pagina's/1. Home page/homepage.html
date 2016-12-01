@@ -20,6 +20,7 @@
 </head>
 <body>
 
+<!--navigatiebar-->
 <nav class="navbar navbar-inverse navbar-fixed-top topbar">
     <div class="container">
 
@@ -36,7 +37,7 @@
             </ul>
         </div>
         <!--zoekbar-->
-        <div class="col-md-3 pull-right">
+        <div class="col-md-3 col-lg-3 pull-right">
             <form class="navbar-form" role="search">
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
@@ -58,11 +59,42 @@
     </div>
 </nav>
 
-<header class="bg-image">
-    <div class="container">
-        <h1 id="bedrijfsnaamTitel">AutoQuest</h1>
-    </div>
+<!--header-->
+<header>
+    <section class="slider">
+        <div id="carousel-example" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example" data-slide-to="1"></li>
+                <li data-target="#carousel-example" data-slide-to="2"></li>
+            </ol>
+
+            <div class="carousel-inner">
+                <div class="item active">
+                    <a href="#"><img src="garage.jpg" /></a>
+
+                </div>
+                <div class="item">
+                    <a href="#" class="picture"><img src="components.jpg"/></a>
+
+                </div>
+                <div class="item">
+                    <a href="#"><img src="garage.jpg" /></a>
+
+                </div>
+            </div>
+
+            <a class="left carousel-control" href="#carousel-example" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+
+    </section>
 </header>
+
 
 <div class="container">
     <div class="row">
@@ -102,6 +134,12 @@
         </div>
     </div>
 </div>
+
+<footer>
+    <div class="footer" id="footer">
+
+    </div>
+</footer>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../bootstrap-files/jquery-3.1.1.min.js"></script>
