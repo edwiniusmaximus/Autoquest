@@ -7,10 +7,6 @@
     padding: 0px;
 }
 
-.container {
-    margin-top: 20px;
-}
-
 /*slider*/
 .slider{
     width: 100%;
@@ -40,4 +36,16 @@
     -ms-transition: 2s all ease-in-out .1s;
     -o-transition: 2s all ease-in-out .1s;
     transition: 2s all ease-in-out .1s;
+}
+
+.footerinfo ul li a {
+     color: white;
+ }
+
+.footerinfo ul li a:hover {
+    color: #176c48;
+}
+
+.footer {
+    background-color: #176c48;
 }
