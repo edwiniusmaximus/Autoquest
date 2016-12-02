@@ -50,7 +50,7 @@
             </div>
             <div class="signin-register">
                 <h2 class="form-signin-heading">Nog geen account?</h2><br>
-                <form>
+                <form action="registreren.php">
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Registreren</button>
                 </form>
             </div>
