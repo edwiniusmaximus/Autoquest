@@ -1,3 +1,7 @@
 <?php
-print "<p>&reg; Autoquest 2016</p>";
+print "
+    <div class=\"footer\">
+        &reg; Autoquest 2016
+    </div>";
 ?>
+
