@@ -12,9 +12,6 @@
         <link href="css/main.css" rel="stylesheet">
     </head>
     <body>
-        <!-- logo -->
-        <?php include 'include/logo.php'; ?>
-
         <!-- navigation bar -->
         <?php include 'include/navbar.php'; ?>
 
@@ -42,21 +39,30 @@
 
         if (!is_logged_in()) {
 
-            //login box & register button
-            print "<div class=login-box >"
-                    . "<form class=login-form method=POST>"
-                    . "<h2>Login</h2>"
-                    . "   <LABEL>Email adres&nbsp;</LABEL><INPUT type='text' name='emailadres'><br>"
-                    . "   <LABEL>Wachtwoord&nbsp;</LABEL><INPUT type='password' name='wachtwoord'><br>"
-                    . "   <INPUT type=submit value='Login'>"
+            //login box
+            print "<FORM method=POST>"
+                    . "<div class='login-container'>"
+                    . "<h2 class'login-login-header'>inloggen</h2><br>"
+                    . "<form class'login-form-login' action='#'>"
+                    //Input email Adress
+                    . "<label for='inputEmail' class='sr-only'>Email address</label>"
+                    . "<input type='email' id='inputEmail' class='form-control' placeholder='Email address' required autofocus name='emailadres'> <br>"
+                    //Input wachtwoord
+                    . "<label for='Wachtwoord' class='sr-only'>Wachtwoord</label>"
+                    . "<input type='password' id='Wachtwoord' class='form-control' placeholder='Wachtwoord' required name='wachtwoord'> <br>"
+                    //Login button
+                    . "<button class='btn btn-lg btn-primary btn-block' type='submit'>Log in</button><a href='#'>Wachtwoord vergeten?</a>"
                     . "</form>"
-                    . "<form class='login-register' action='#'>"
-                    . "    <h2>Nog geen account?</h2>"
-                    . "    <INPUT type=submit value='Register'>"
+                    . "<div class='login-border'>"
+                    . "</div>"
+                    . "<div class='login-register-header'>"
+                    . "<h2 class='login-header'>Nog geen account?</h2><br>"
+                    //Register button
+                    . "<form class='login-form-register' action='#'>"
+                    . "<button class='btn btn-lg btn-primary btn-block' type='submit'>Registreren</button>"
                     . "</form>"
+                    . "</div>"
                     . "</div>";
-            //footer
-            include 'include/footer.php';
             exit();
         };
 
@@ -93,5 +99,7 @@
             }
         }
         ?>
+        <!-- footer -->
+        <?php include 'include/footer.php'; ?>
     </body>
 </html>

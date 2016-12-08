@@ -1,0 +1,88 @@
+body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #eee;
+}
+
+/* navbar */
+.topbar {
+  background-color: #176c48;
+  padding: 0;
+}
+
+/* footer */
+.footer {
+    text-align: center;
+    float: center;
+    position: relative;
+    bottom: -20px;
+}
+
+/*login page*/
+
+.login-container {
+    float: center;
+    background-color: #FFFFFF;
+    margin-top: 100px ;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 150px;
+    width: 800px;
+    height: 300px;
+}
+
+.login-login-header {
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-bottom: 10px;
+}
+
+.login-form-login {
+    width: 300px;
+    margin-left: 30px;
+    background-color: #FFFFFF;
+    float: left;
+    margin-bottom: 10px;
+}
+
+.login-form-login .checkbox {
+    font-weight: normal;
+}
+
+.login-form-login .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.login-form-login .form-control:focus {
+    z-index: 2;
+}
+.login-form-login input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.login-form-login input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.login-border {
+    margin: 100 auto;
+    border-width: 5px;
+    border-color: #000000;
+    border-line: solid;
+    float: center;
+}
+
+.login-register-header {
+    margin: -50 auto;
+    float: right;
+    margin-right: 50px;
+    
+}
