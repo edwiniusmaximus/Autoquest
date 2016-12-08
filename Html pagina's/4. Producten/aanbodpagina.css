@@ -1,9 +1,9 @@
-#wrapper {
+.aanbod-wrapper {
   padding-left: 250px;
   transition: all 0.4s ease 0s;
 }
 
-#sidebar-wrapper {
+.aanbod-sidebar-wrapper {
   margin-left: -250px;
   left: 250px;
   width: 250px;
@@ -15,11 +15,9 @@
   transition: all 0.4s ease 0s;
 }
 
-#page-content-wrapper {
-  width: 100%;
-}
 
-.sidebar-nav {
+
+.aanbod-sidebar-nav {
   position: absolute;
   top: 0;
   width: 250px;
@@ -27,30 +25,6 @@
   margin: 0;
   padding: 0;
 }
-
-@media (max-width:767px) {
-
-    #wrapper {
-      padding-left: 0;
-    }
-
-    #sidebar-wrapper {
-      left: 0;
-    }
-
-    #wrapper.active {
-      position: relative;
-      left: 250px;
-    }
-
-    #wrapper.active #sidebar-wrapper {
-      left: 250px;
-      width: 250px;
-      transition: all 0.4s ease 0s;
-    }
-
-}
-
 
 .aanbod-form-search {
     box-sizing: border-box;
@@ -88,3 +62,25 @@
 .aanbod-filter-title {
     text-align: center;
 }
+
+.col-md-2 {
+    border: 1px black solid;
+    margin: auto;
+}
+
+.col-md-7 {
+    border: 1px black solid;
+    margin: auto;
+}
+
+.aanbod-table-data {
+    height: 100px;
+}
+
+.aanbod-prijs {
+    font-size: 20px;
+    text-align: center;
+    border: 1px black solid;
+}
+
+
