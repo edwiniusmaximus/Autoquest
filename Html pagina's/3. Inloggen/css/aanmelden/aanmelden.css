@@ -11,6 +11,11 @@ body {
     width: 800px;
 }
 
+.topbar {
+    background-color: #176c48;
+    padding: 0;
+}
+
 .form-signin {
     width: 300px;
     padding: 15px;
@@ -53,7 +58,7 @@ body {
     margin: 100 auto;
     border-width: 5px;
     border-color: #000000;
-    border-line: solid;
+    border-left: think solid;
     float: center;
 }
 
