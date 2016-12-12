@@ -10,7 +10,7 @@
               </button>
 
             <!--logo placeholder-->
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="../1. Home page/index.php">
               <!-- Tijdelijke Tekst -->
             <p style="color: white">Autoquest</p>
             </a>
