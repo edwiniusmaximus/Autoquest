@@ -101,9 +101,7 @@
     </div>
 </div>
 
-<?php
-include("../navigationbar/Footer.php");
-?>
+<?php include("../navigationbar/Footer.php"); ?>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../bootstrap-files/jquery-3.1.1.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
