@@ -8,20 +8,14 @@
     <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
-    <link href="../bootstrap-files/bootstrap.min.css" rel="stylesheet">
-    <link href="../4.%20Producten/aanbodpagina.css" rel="stylesheet">
-
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 
 </head>
 <body>
 
 <?php
-/**
- * Created by PhpStorm.
- * User: Niels Helmantel
- * Date: 11-12-2016
- * Time: 22:27
- */
+
 // database include
 include 'database.php';
 // logo include
@@ -34,11 +28,8 @@ $stmt = $pdo->prepare("SELECT * FROM product");
 
 $stmt->execute();
 
-
-
 ?>
 
-<h1>Aanbod</h1>
 <div class="aanbod-wrapper">
     <div class="aanbod-sidebar-wrapper">
         <ul class="aanbod-sidebar-nav">
@@ -63,7 +54,7 @@ $stmt->execute();
         <table class="col-md-11">
             <tr>
                 <th class="col-md-2">Foto</th>
-                <th class="col-md-7">Beschrijving</th>
+                <th class="col-md-7">Productnaam</th>
                 <th class="col-md-2">Prijs</th>
             </tr>
             <?php
@@ -74,11 +65,8 @@ $stmt->execute();
                 $prijs = $row["prijs"];
                 echo "<tr class=\"aanbod-table-data\">";
                 echo "<td class=\"col-md-2\">Voeg foto in.</td>";
-                echo "<td class=\"col-md-7\"><a href=itempage.php?id=$productnummer>" . $naam . "</a></td>";
+                echo "<td class=\"col-md-7\"><a href=itempage.php?rowid=$productnummer>" . $naam . "</a></td>";
                 echo "<td class=\"aanbod-prijs\">" .  $prijs . " EURO" . "</td>";
-                echo "<form class=\"aanbod-info-button\">";
-                echo "<input type=\"submit\" value=\"Meer informatie\">";
-                echo "</form></td>";
                 echo "</tr>";
             }
             ?>
@@ -87,9 +75,8 @@ $stmt->execute();
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="../bootstrap-files/https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="css/https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../bootstrap-files/js/bootstrap.min.js"></script>
+<script src="css/js/bootstrap.min.js"></script>
 </body>
 </html>
-

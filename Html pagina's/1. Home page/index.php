@@ -11,6 +11,7 @@
     <link href="../bootstrap-files/bootstrap.min.css" rel="stylesheet">
     <link href="homepage.css" rel="stylesheet">
 
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -21,43 +22,8 @@
 <body>
 
 <!--navigatiebar-->
-<nav class="navbar navbar-inverse navbar-fixed-top topbar">
-    <div class="container">
-
-        <!--logo placeholder-->
-        <div>
-            <a href="../1.%20Home%20page/homepage.html" class="pull-left"><img src="#" width=25%" height="25%">placeholder</a>
-        </div>
-
-        <!--aanmelden registreren-->
-        <div class="nav-items pull-right">
-            <ul class="nav navbar-nav">
-                <li><a href="#">aanmelden</a> </li>
-                <li><a href="../2.%20Registreren/Registreren.html">registeren</a> </li>
-            </ul>
-        </div>
-        <!--zoekbar-->
-        <div class="col-md-3 pull-right">
-            <form class="navbar-form" role="search">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-                    <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                    </div>
-                </div>
-            </form>
-        </div>
-
-        <!--auto-onderdelen-->
-        <div class="nav-items pull-left">
-            <ul class="nav navbar-nav">
-
-                <li class="active"><a href="../4.%20Producten/aanbodpagina.html">Auto-onderdelen</a> </li>
-
-            </ul>
-        </div>
-    </div>
-</nav>
+<?php include("../navigationbar/navigation.php");
+?>
 
 <!--header-->
 <header>
@@ -135,43 +101,9 @@
     </div>
 </div>
 
-<div class="footer">
-    <div class="container text-center">
-        <hr />
-        <div class="row">
-            <div class="col-lg-12 footerinfo">
-                <div class="col-md-3">
-                    <ul class="nav nav-pills nav-stacked">
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <ul class="nav nav-pills nav-stacked">
-                        <li><a href="#">Product for Mac</a></li>
-                        <li><a href="#">Product for Windows</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <ul class="nav nav-pills nav-stacked">
-                        <li><a href="#">Web analytics</a></li>
-                        <li><a href="#">Presentations</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <ul class="nav nav-pills nav-stacked">
-                        <li><a href="#">Product Help</a></li>
-                        <li><a href="#">Developer API</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-    </div>
-    </div>
-</div>
-
+<?php
+include("../navigationbar/Footer.php");
+?>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../bootstrap-files/jquery-3.1.1.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->

@@ -24,15 +24,32 @@ include 'include/navbar.php';
 // database include
 include 'database.php';
 
-$productnummer = $_GET["id"];
+$productnummer = $_GET["rowid"];
 $stmt = $pdo->prepare("SELECT * FROM product WHERE productnummer = ?");
 $stmt ->execute(array($productnummer));
 ?>
 
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 boxlinks">
+            <?php
+            while ($row = $stmt->fetch()) {
+                $naam = $row["naam"];
+                echo "<h1>" . $naam . "</h1>";
+                $omschrijving = $row["omschrijving"];
+                echo "<p>omschrijving: " . $omschrijving . "</p>";
+                echo "<p>productnummer: " . $productnummer . "</p>";
+                $bouwjaar = $row["bouwjaar"];
+                echo "<p>bouwjaar: " . $bouwjaar . "</p>";
+                $merk = $row["merk"];
+                echo "<p>merk: " . $merk . "</p>";
+                $gewicht = $row["gewicht"];
+                echo "<p>gewicht: " . $gewicht . "</p>";
+                $type = $row["type"];
+                echo "<p>type: " . $type . "</p>";
+            }
 
+            ?>
         </div>
     </div>
 </div>

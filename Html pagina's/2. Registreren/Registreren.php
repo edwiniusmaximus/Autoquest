@@ -37,14 +37,15 @@
 
             <!--logo placeholder-->
             <div>
-                <a href="../1.%20Home%20page/homepage.html" class="pull-left"><img src="#" width=25%" height="25%">placeholder</a>
+                <a href="../1.%20Home%20page/index.php" class="pull-left"><img src="#" width=25%" height="25%">placeholder</a>
             </div>
 
             <!--aanmelden registreren-->
             <div class="nav-items pull-right">
                 <ul class="nav navbar-nav">
                     <li><a href="#">aanmelden</a> </li>
-                    <li><a href="../2.%20Registreren/Registreren.html">registeren</a> </li>
+                    <li><a href="../2.%20Registreren/Registreren.php
+">registeren</a> </li>
                 </ul>
             </div>
             <!--zoekbar-->

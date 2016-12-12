@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+.navbar{
+    color:white;
+}
+
 /*slider*/
 .slider{
     width: 100%;
@@ -44,4 +48,8 @@
 
 .footer {
     background-color: #176c48;
+    font-size: 1em;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    color: white;
 }
