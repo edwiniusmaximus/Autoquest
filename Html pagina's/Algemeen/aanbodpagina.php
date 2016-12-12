@@ -9,7 +9,7 @@
 
     <!-- Bootstrap -->
     <link href="../bootstrap-files/bootstrap.min.css" rel="stylesheet">
-    <link href="aanbodpagina.css" rel="stylesheet">
+    <link href="../4.%20Producten/aanbodpagina.css" rel="stylesheet">
 
 
 </head>
@@ -22,10 +22,13 @@
  * Date: 11-12-2016
  * Time: 22:27
  */
+// database include
+include 'database.php';
+// logo include
+include 'include/logo.php';
 
-$db = "mysql:host=localhost;dbname=mydb;port=3306";
-$user = "root";
-$pdo = new PDO($db, $user);
+// navbar include
+include 'include/navbar.php';
 
 $stmt = $pdo->prepare("SELECT * FROM product");
 
@@ -66,11 +69,12 @@ $stmt->execute();
             <?php
             while ($row = $stmt->fetch())
             {
+                $productnummer = $row["productnummer"];
                 $naam = $row["naam"];
                 $prijs = $row["prijs"];
                 echo "<tr class=\"aanbod-table-data\">";
                 echo "<td class=\"col-md-2\">Voeg foto in.</td>";
-                echo "<td class=\"col-md-7\">" . $naam . "</td>";
+                echo "<td class=\"col-md-7\"><a href=itempage.php?id=$productnummer>" . $naam . "</a></td>";
                 echo "<td class=\"aanbod-prijs\">" .  $prijs . " EURO" . "</td>";
                 echo "<form class=\"aanbod-info-button\">";
                 echo "<input type=\"submit\" value=\"Meer informatie\">";

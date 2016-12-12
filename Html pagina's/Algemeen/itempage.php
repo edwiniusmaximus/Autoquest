@@ -14,24 +14,25 @@
 <body>
 <?php
 session_start();
-//navigation bar
-include 'include/cpanelnavbar.php';
+
+// logo include
+include 'include/logo.php';
+
+// navbar include
+include 'include/navbar.php';
 
 // database include
-$db = "mysql:host=localhost;dbname=mydb;port=3306";
-$user = "root";
-$pdo = new PDO($db, $user);
+include 'database.php';
 
-$stmt = $pdo->prepare("SELECT * FROM product");
-
-$stmt->execute();
-
+$productnummer = $_GET["id"];
+$stmt = $pdo->prepare("SELECT * FROM product WHERE productnummer = ?");
+$stmt ->execute(array($productnummer));
 ?>
 
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            
+
         </div>
     </div>
 </div>
