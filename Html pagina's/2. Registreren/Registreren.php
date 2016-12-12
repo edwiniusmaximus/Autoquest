@@ -18,7 +18,7 @@
         <link href="../bootstrap-files/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
-        <link href="registreren.css" rel="stylesheet">
+        <link href="../1. Home page/homepage.css" rel="stylesheet">
 
         
 
@@ -32,76 +32,33 @@
     <body>
 
     <!--navigatiebar-->
-    <nav class="navbar navbar-inverse navbar-fixed-top topbar">
-        <div class="container">
-
-            <!--logo placeholder-->
-            <div>
-                <a href="../1.%20Home%20page/index.php" class="pull-left"><img src="#" width=25%" height="25%">placeholder</a>
-            </div>
-
-            <!--aanmelden registreren-->
-            <div class="nav-items pull-right">
-                <ul class="nav navbar-nav">
-                    <li><a href="#">aanmelden</a> </li>
-                    <li><a href="../2.%20Registreren/Registreren.php
-">registeren</a> </li>
-                </ul>
-            </div>
-            <!--zoekbar-->
-            <div class="col-md-3 pull-right">
-                <form class="navbar-form" role="search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-                        <div class="input-group-btn">
-                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-            <!--auto-onderdelen-->
-            <div class="nav-items pull-left">
-                <ul class="nav navbar-nav">
-
-                    <li class="active"><a href="../4.%20Producten/aanbodpagina.html">Auto-onderdelen</a> </li>
-
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <?php include("../navigationbar/navigation.php");
+    ?>
 
         <div class="container">
-
             <form class="form-signin">
                 <h2 class="form-signin-heading">Registreren</h2>
-                <!-- Voornaam -->
-                <label for="Voornaam" class="sr-only">Voornaam</label>
-                <input type="text" id="Voornaam" class="form-control" placeholder="Voornaam" required> <br>
-                <!-- Achternaam -->
-                <label for="Achternaam" class="sr-only">Achternaam</label>
-                <input type="text" id="Achternaam" class="form-control" placeholder="Achternaam" required autofocus> <br>
-                <!-- Straatnaam -->
-                <label for="Straatnaam" class="sr-only">Straatnaam</label>
-                <input type="text" id="Straatnaam" class="form-control" placeholder="Straatnaam" required autofocus> <br>
-                <!-- Huisnummer -->
-                <label for="Huisnummer" class="sr-only">Huisnummer</label>
-                <input type="text" id="Huisnummer" class="form-control" placeholder="Huisnummer" required autofocus> <br>
-                <!-- Woonplaats -->
-                <label for="Woonplaats" class="sr-only">Woonplaats</label>
-                <input type="text" id="Woonplaats" class="form-control" placeholder="Woonplaats" required autofocus> <br>
-                <!-- Email Adress -->
-                <label for="inputEmail" class="sr-only">Email address</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus> <br>
-                <!-- Wachtwoord -->
-                <label for="Wachtwoord" class="sr-only">Wachtwoord</label>
-                <input type="password" id="Huisnummer" class="form-control" placeholder="Wachtwoord" required autofocus> <br>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Registreren</button>
+                        <!-- Voorletters -->
+                        <label for="Emailadres" class="sr-only">Emailadres</label>
+                        <input type="email" id="Emailadres" class="form-control" placeholder="Emailadres" required> <br>
+                        <!-- Voornaam -->
+                        <label for="Voornaam" class="sr-only">Voornaam</label>
+                        <input type="text" id="Voornaam" class="form-control" placeholder="Voornaam" required> <br>
+                        <!-- Achternaam -->
+                        <label for="Achternaam" class="sr-only">Achternaam</label>
+                        <input type="text" id="Achternaam" class="form-control" placeholder="Achternaam" required autofocus> <br>
+                        <!-- Wachtwoord -->
+                        <label for="Wachtwoord" class="sr-only">Wachtwoord</label>
+                        <input type="password" id="wachtwoord" class="form-control" placeholder="Wachtwoord" required autofocus> <br>
+                        <!-- Wachtwoord -->
+                        <label for="Wachtwoord2" class="sr-only">Verifieer Wachtwoord</label>
+                        <input type="password" id="Wachtwoord2" class="form-control" placeholder="Verifieer wachtwoord" required autofocus> <br>
+                        <!-- Button Registreren -->
+                        <button id="RegisButton" class="btn btn-lg btn-primary btn-block" type="submit">Registreren</button>
             </form>
+        </div>
 
-        </div> <!-- /container -->
 
-
-      
+    <?php include("../navigationbar/Footer.php"); ?>
     </body>
 </html>

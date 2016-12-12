@@ -10,7 +10,7 @@
               </button>
 
             <!--logo placeholder-->
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="../1. Home page/index.php">
               <!-- Tijdelijke Tekst -->
             <p style="color: white">Autoquest</p>
             </a>
@@ -26,7 +26,7 @@
         <!--aanmelden registreren-->
         <div class="nav-items pull-right navbar-collapse collapse">
             <ul class="nav navbar-nav  ">
-                <li><a href="#">Inloggen</a> </li>
+                <li><a href="../3. Inloggen/login.php">Inloggen</a> </li>
                 <li><a href="../2.%20Registreren/Registreren.php">registeren</a> </li>
                 <li><a href="#">Winkelmandje</a> </li>
                 </ul>
