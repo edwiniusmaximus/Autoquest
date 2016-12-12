@@ -20,47 +20,55 @@
 </head>
 <body>
 <!--navigatiebar-->
-<nav class="navbar navbar-inverse navbar-fixed-top topbar">
-    <div class="container">
+<nav class="navbar navbar-inverse navbar-static-top topbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
 
-        <!--logo placeholder-->
-        <div>
-            <a href="#" class="pull-left"><img src="#" width=25%" height="25%">placeholder</a>
+            <!--logo placeholder-->
+            <a class="navbar-brand" href="#">
+              <!-- Tijdelijke Tekst -->
+            <p style="color: white">Autoquest</p>
+            </a>
+        </div>
+
+    <!--auto-onderdelen-->
+        <div class="nav-items pull-left navbar-collapse collapse">
+            <ul class="nav navbar-nav  ">
+                <li><a href="../4.%20Producten/aanbodpagina.html">Auto-onderdelen</a></li>
+            </ul>
         </div>
 
         <!--aanmelden registreren-->
-        <div class="nav-items pull-right">
-            <ul class="nav navbar-nav">
-                <li><a href="#">aanmelden</a> </li>
+        <div class="nav-items pull-right navbar-collapse collapse">
+            <ul class="nav navbar-nav  ">
+                <li><a href="#">Inloggen</a> </li>
                 <li><a href="../2.%20Registreren/Registreren.html">registeren</a> </li>
-            </ul>
+                <li><a href="#">Winkelmandje</a> </li>
+                </ul>
         </div>
+
         <!--zoekbar-->
-        <div class="col-md-3 pull-right">
-            <form class="navbar-form" role="search">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-                    <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                    </div>
-                </div>
+        <form class="navbar-form navbar-right navbar-collapse collapse" role="search">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Zoek">
+  </div>
             </form>
-        </div>
 
-        <!--auto-onderdelen-->
-        <div class="nav-items pull-left">
-            <ul class="nav navbar-nav">
 
-                <li class="active"><a href="../4.%20Producten/aanbodpagina.html">Auto-onderdelen</a> </li>
 
-            </ul>
-        </div>
     </div>
 </nav>
-
+        
+       
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="../bootstrap-files/https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="../bootstrap-files/jquery-3.1.1.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../bootstrap-files/js/bootstrap.min.js"></script>
+<script src="../bootstrap-files/bootstrap.min.js"></script>
 </body>
 </html>
