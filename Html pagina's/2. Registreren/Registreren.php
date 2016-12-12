@@ -36,35 +36,27 @@
     ?>
 
         <div class="container">
-
             <form class="form-signin">
                 <h2 class="form-signin-heading">Registreren</h2>
-                <!-- Voornaam -->
-                <label for="Voornaam" class="sr-only">Voornaam</label>
-                <input type="text" id="Voornaam" class="form-control" placeholder="Voornaam" required> <br>
-                <!-- Achternaam -->
-                <label for="Achternaam" class="sr-only">Achternaam</label>
-                <input type="text" id="Achternaam" class="form-control" placeholder="Achternaam" required autofocus> <br>
-                <!-- Straatnaam -->
-                <label for="Straatnaam" class="sr-only">Straatnaam</label>
-                <input type="text" id="Straatnaam" class="form-control" placeholder="Straatnaam" required autofocus> <br>
-                <!-- Huisnummer -->
-                <label for="Huisnummer" class="sr-only">Huisnummer</label>
-                <input type="text" id="Huisnummer" class="form-control" placeholder="Huisnummer" required autofocus> <br>
-                <!-- Woonplaats -->
-                <label for="Woonplaats" class="sr-only">Woonplaats</label>
-                <input type="text" id="Woonplaats" class="form-control" placeholder="Woonplaats" required autofocus> <br>
-                <!-- Email Adress -->
-                <label for="inputEmail" class="sr-only">Email address</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus> <br>
-                <!-- Wachtwoord -->
-                <label for="Wachtwoord" class="sr-only">Wachtwoord</label>
-                <input type="password" id="Huisnummer" class="form-control" placeholder="Wachtwoord" required autofocus> <br>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Registreren</button>
+                        <!-- Voorletters -->
+                        <label for="Emailadres" class="sr-only">Emailadres</label>
+                        <input type="email" id="Emailadres" class="form-control" placeholder="Emailadres" required> <br>
+                        <!-- Voornaam -->
+                        <label for="Voornaam" class="sr-only">Voornaam</label>
+                        <input type="text" id="Voornaam" class="form-control" placeholder="Voornaam" required> <br>
+                        <!-- Achternaam -->
+                        <label for="Achternaam" class="sr-only">Achternaam</label>
+                        <input type="text" id="Achternaam" class="form-control" placeholder="Achternaam" required autofocus> <br>
+                        <!-- Wachtwoord -->
+                        <label for="Wachtwoord" class="sr-only">Wachtwoord</label>
+                        <input type="password" id="wachtwoord" class="form-control" placeholder="Wachtwoord" required autofocus> <br>
+                        <!-- Wachtwoord -->
+                        <label for="Wachtwoord2" class="sr-only">Verifieer Wachtwoord</label>
+                        <input type="password" id="Wachtwoord2" class="form-control" placeholder="Verifieer wachtwoord" required autofocus> <br>
+                        <!-- Button Registreren -->
+                        <button id="RegisButton" class="btn btn-lg btn-primary btn-block" type="submit">Registreren</button>
             </form>
-
-        </div> <!-- /container -->
-
+        </div>
 
 
     <?php include("../navigationbar/Footer.php"); ?>
