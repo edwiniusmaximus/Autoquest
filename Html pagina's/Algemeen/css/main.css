@@ -175,3 +175,20 @@
     text-align: center;
     border: 1px black solid;
 }
+
+/*itempage*/
+
+.boxlinks {
+    background-color: gray;
+}
+
+.boxrechts {
+    background-color: gray;
+
+}
+
+.item-image {
+    width: 200px;
+    height: 200px;
+
+}

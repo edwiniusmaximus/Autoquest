@@ -8,6 +8,7 @@
     <title>cpanel - klanten</title>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
     <!-- Custom styles for this template -->
 <!--    <link href="css/main.css" rel="stylesheet">-->
 </head>
@@ -47,9 +48,19 @@ $stmt ->execute(array($productnummer));
                 echo "<p>gewicht: " . $gewicht . "</p>";
                 $type = $row["type"];
                 echo "<p>type: " . $type . "</p>";
+                $prijs = $row["prijs"];
+                echo "<h1>" . $prijs . " euro</h1>";
             }
 
             ?>
+        </div>
+        <div class="col-md-6 boxrechts">
+            <div class="item-image">
+
+            </div>
+            <form method="get">
+                <button>Bestellen</button>
+            </form>
         </div>
     </div>
 </div>
