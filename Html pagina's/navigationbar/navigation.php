@@ -28,7 +28,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="../3. Inloggen/login.php">Inloggen</a> </li>
                 <li><a href="../2.%20Registreren/Registreren.php">registeren</a> </li>
-                <li><a href="#">Winkelmandje</a> </li>
+                <li><a href="../Algemeen/winkelwagen.php">Winkelmandje</a> </li>
                 </ul>
         </div>
 

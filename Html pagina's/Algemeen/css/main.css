@@ -193,12 +193,37 @@
 
 }
 
-
 .boxmidden .item-image img {
     width: 457px;
     height: 457px;
     overflow: hidden;
 
+}
+
+/*winkelwagen*/
+
+.producten td {
+}
+
+.producten {
+    border-collapse: separate;
+    border-spacing: 10px;
+    background-color: #c6c8cd;
+    margin-right: 40px;
+
+}
+
+.overzicht {
+    background-color: #c6c8cd;
+}
+
+.overzicht td {
+    padding: 15px;
+}
+
+.overzicht th {
+    padding: 15px;
+    font-size: large;
 }
 
 /* Login page */
