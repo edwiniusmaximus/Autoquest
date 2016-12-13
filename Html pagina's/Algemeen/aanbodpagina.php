@@ -9,7 +9,7 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="../4.%20Producten/aanbodpagina.css" rel="stylesheet">
+    <link href="css/homepage.css" rel="stylesheet">
 <!--    <link href="css/main.css" rel="stylesheet">-->
 
 </head>

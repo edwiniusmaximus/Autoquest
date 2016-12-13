@@ -1,78 +1,177 @@
-body {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    background-color: #cccccc;
+.topbar {
+    background-color: #176c48;
+    padding: 0;
 }
 
-/* logo */
-.logo img {
-  float: left;
-  width: 100px;
-  height: 100px;
-  margin-left: 400px;
+.navbar{
+    color:white;
 }
 
-.logo h1 {
-  position: relative;
-  top: 18px;
-  left: 10px;
-}
-
-/* navbar */
-.nav-bar {
-  background-color: #000000;
-  padding: 10px;
-  margin-top: 100px;
-  margin-left: 30px;
-  margin-right: 30px;
-  
-}
-
-/* footer */
-.footer {
-    background:#000000;
-    width: 96%;
-    height:50px;
-    position:absolute;
-    bottom:0;
-    left:0;
-    margin-left: 30px;
-    margin-right: 30px;
-    text-align: center;
-}
-
-/*login page*/
-
-.login-box {
-    float: center;
+/*slider*/
+.slider{
     width: 100%;
-    margin-top: 50px;
-    background-color: #cccccc;
 }
 
-.login-form {
-    float: center;
-    text-align: center;
-    background-color: #ffffff;
-    box-sizing: border-box;
+.carousel .item {
+    height: 350px;
+}
+
+.item img {
+    height: 350px;
+}
+
+.fade-carousel .carousel-inner .item .hero {
+    opacity: 0;
+    -webkit-transition: 2s all ease-in-out .1s;
+    -moz-transition: 2s all ease-in-out .1s;
+    -ms-transition: 2s all ease-in-out .1s;
+    -o-transition: 2s all ease-in-out .1s;
+    transition: 2s all ease-in-out .1s;
+}
+
+.fade-carousel .carousel-inner .item.active .hero {
+    opacity: 1;
+    -webkit-transition: 2s all ease-in-out .1s;
+    -moz-transition: 2s all ease-in-out .1s;
+    -ms-transition: 2s all ease-in-out .1s;
+    -o-transition: 2s all ease-in-out .1s;
+    transition: 2s all ease-in-out .1s;
+}
+
+.footerinfo ul li a {
+     color: white;
+ }
+
+.footerinfo ul li a:hover {
+    color: #176c48;
+}
+
+.footer {
+    background-color: #176c48;
+    font-size: 1em;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    color: white;
+}
+
+.form-signin {
+    max-width: 330px;
     padding: 15px;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin: 0 auto;
 }
-
-.login-register {
-    float: center;
-    text-align: center;
-    background-color: #ffffff;
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+    margin-bottom: 10px;
+}
+.form-signin .checkbox {
+    font-weight: normal;
+}
+.form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
-    padding: 15px;
-    margin-left: 30px;
-    margin-right: 30px;
+    padding: 10px;
+    font-size: 16px;
+}
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+#RegisButton{
+    background-color: #176c48;
 }
 
-/*cpanelnavbar*/
-.cpanel-navbar {
-    margin-left: 30px;
-    margin-right: 60%;
-    background-color: #ffffff;
+/*aanbodpagina*/
+.aanbod-wrapper {
+    padding-left: 250px;
+    transition: all 0.4s ease 0s;
+}
+
+.aanbod-sidebar-wrapper {
+    margin-left: -250px;
+    left: 250px;
+    width: 250px;
+    background: #CCC;
+    position: absolute;
+    height: 100%;
+    overflow-y: auto;
+    z-index: 1000;
+    transition: all 0.4s ease 0s;
+}
+
+.aanbod-sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.aanbod-form-search {
+    box-sizing: border-box;
+    width: 230px;
+    margin: auto;
+
+
+}
+
+.aanbod-dropdown-merk {
+    box-sizing: border-box;
+    width: 230px;
+    margin: auto;
+
+}
+
+.aanbod-dropdown-bouwjaar {
+    box-sizing: border-box;
+    width: 230px;
+    margin: auto;
+
+}
+
+.aanbod-dropdown-onderdeel {
+    box-sizing: border-box;
+    width: 230px;
+    margin: auto;
+
+}
+
+.aanbod-search-button {
+    text-align: center;
+}
+
+.aanbod-filter-title {
+    text-align: center;
+}
+
+.col-md-2 {
+    border: 1px black solid;
+    margin: auto;
+}
+
+.col-md-7 {
+    border: 1px black solid;
+    margin: auto;
+}
+
+.aanbod-table-data {
+    height: 100px;
+}
+
+.aanbod-prijs {
+    font-size: 20px;
+    text-align: center;
+    border: 1px black solid;
 }
