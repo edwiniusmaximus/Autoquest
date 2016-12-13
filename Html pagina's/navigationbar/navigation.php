@@ -16,16 +16,16 @@
             </a>
         </div>
 
-    <!--auto-onderdelen-->
-        <div class="nav-items pull-left navbar-collapse collapse">
-            <ul class="nav navbar-nav  ">
+    <!--auto-onderdelen -->
+        <div class="nav-items navbar-left navbar-collapse collapse">
+            <ul class="nav navbar-nav">
                 <li><a href="../4.%20Producten/aanbodpagina.html">Auto-onderdelen</a></li>
             </ul>
         </div>
 
         <!--aanmelden registreren-->
-        <div class="nav-items pull-right navbar-collapse collapse">
-            <ul class="nav navbar-nav  ">
+        <div class="nav-items navbar-right navbar-collapse collapse">
+            <ul class="nav navbar-nav">
                 <li><a href="../3. Inloggen/login.php">Inloggen</a> </li>
                 <li><a href="../2.%20Registreren/Registreren.php">registeren</a> </li>
                 <li><a href="#">Winkelmandje</a> </li>
@@ -34,10 +34,10 @@
 
         <!--zoekbar-->
         <form class="navbar-form navbar-right navbar-collapse collapse" role="search">
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="Zoek">
-  </div>
-            </form>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Zoek">
+          </div>
+        </form>
 
 
 
