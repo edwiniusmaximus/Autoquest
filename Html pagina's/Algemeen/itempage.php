@@ -70,6 +70,7 @@ $stmt ->execute(array($productnummer));
             echo "<h3>" . $prijs . " euro</h3>";
             ?>
             <form method="get">
+                <input type="text" name="aantal" value="aantal"><br>
                 <button>Toevoegen aan winkelwagen</button>
             </form>
         </div>
