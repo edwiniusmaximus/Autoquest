@@ -7,9 +7,9 @@
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <title>Autoquest - Login</title>
         <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../Tijdelijke%20prullenbak/css/bootstrap.css">
         <!-- Custom styles for this template -->
-        <link href="css/main.css" rel="stylesheet">
+        <link href="../Tijdelijke%20prullenbak/css/main.css" rel="stylesheet">
     </head>
     <body>
         <!-- logo -->

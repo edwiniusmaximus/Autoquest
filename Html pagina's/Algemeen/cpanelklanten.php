@@ -7,7 +7,7 @@
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <title>cpanel - klanten</title>
         <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../Tijdelijke%20prullenbak/bootstrap.css">
         <!-- Custom styles for this template -->
         <link href="css/main.css" rel="stylesheet">
     </head>

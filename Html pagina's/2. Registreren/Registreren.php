@@ -18,7 +18,7 @@
         <link href="../bootstrap-files/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
-        <link href="../1. Home page/homepage.css" rel="stylesheet">
+        <link href="../Algemeen/css/main.css" rel="stylesheet">
 
         
 

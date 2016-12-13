@@ -8,7 +8,7 @@
     <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../Tijdelijke%20prullenbak/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
 <!--    <link href="css/main.css" rel="stylesheet">-->
 
