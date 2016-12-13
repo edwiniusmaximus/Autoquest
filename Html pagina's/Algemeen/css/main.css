@@ -181,17 +181,28 @@
 /*itempage*/
 
 .boxlinks {
-    background-color: gray;
+    background-color: #e1e3e8;
 }
+
+.boxlinks td {
+    vertical-align: top;
+    text-align: left;
+    padding: 5px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+
+}
+
 
 .boxrechts {
-    background-color: gray;
+
 
 }
 
-.item-image {
-    width: 200px;
-    height: 200px;
+.boxmidden .item-image img {
+    width: 457px;
+    height: 457px;
+    overflow: hidden;
 
 }
 

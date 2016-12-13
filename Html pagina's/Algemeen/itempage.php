@@ -31,34 +31,46 @@ $stmt ->execute(array($productnummer));
 
 <div class="container">
     <div class="row">
-        <div class="col-md-6 boxlinks">
+        <table class="col-md-3 boxlinks">
+
+            <tr><td><h3>Kenmerken</h3></td></tr>
             <?php
             while ($row = $stmt->fetch()) {
                 $naam = $row["naam"];
-                echo "<h1>" . $naam . "</h1>";
                 $omschrijving = $row["omschrijving"];
-                echo "<p>omschrijving: " . $omschrijving . "</p>";
-                echo "<p>productnummer: " . $productnummer . "</p>";
+
+                echo "<tr><td>productnummer:</td><td>" . $productnummer . "</td></tr>";
                 $bouwjaar = $row["bouwjaar"];
-                echo "<p>bouwjaar: " . $bouwjaar . "</p>";
+                echo "<tr><td>bouwjaar:</td><td>" . $bouwjaar . "</td></tr>";
                 $merk = $row["merk"];
-                echo "<p>merk: " . $merk . "</p>";
+                echo "<tr><td>merk:</td><td>" . $merk . "</td></tr>";
                 $gewicht = $row["gewicht"];
-                echo "<p>gewicht: " . $gewicht . "</p>";
+                echo "<tr><td>gewicht:</td><td>" . $gewicht . "</td></tr>";
                 $type = $row["type"];
-                echo "<p>type: " . $type . "</p>";
+                echo "<tr><td>type:</td><td>" . $type . "</td></tr>";
                 $prijs = $row["prijs"];
-                echo "<h1>" . $prijs . " euro</h1>";
+
             }
 
             ?>
-        </div>
-        <div class="col-md-6 boxrechts">
-            <div class="item-image">
+        </table>
 
+        <div class="col-md-5 boxmidden">
+            <div class="item-image">
+                <?php
+                echo "<img src=\"img-" . $productnummer . ".jpg\">"
+                ?>
             </div>
+
+        </div>
+        <div class="col-md-4 boxrechts">
+            <?php
+            echo "<h1>" . $naam . "</h1>";
+            echo "<p>omschrijving: " . $omschrijving . "</p>";
+            echo "<h3>" . $prijs . " euro</h3>";
+            ?>
             <form method="get">
-                <button>Bestellen</button>
+                <button>Toevoegen aan winkelwagen</button>
             </form>
         </div>
     </div>
