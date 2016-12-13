@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="83c31212-ff71-4bf7-b03d-837814aa9ee3" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Html pagina's/Algemeen/database.php" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/Html pagina's/4. Producten/aanbodpagina.php" afterPath="$PROJECT_DIR$/Html pagina's/Algemeen/aanbodpagina.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Html pagina's/Algemeen/itempage.php" afterPath="$PROJECT_DIR$/Html pagina's/Algemeen/itempage.php" />
     </list>
+=======
+    <list default="true" id="83c31212-ff71-4bf7-b03d-837814aa9ee3" name="Default" comment="" />
+>>>>>>> Stashed changes
     <ignored path="AutoQuest.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -33,16 +37,32 @@
     <favorites_list name="AutoQuest" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Html pagina's/1. Home page/homepage.html">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
+            <state relative-caret-position="2625">
+              <caret line="105" column="39" selection-start-line="102" selection-start-column="15" selection-end-line="105" selection-end-column="39" />
+=======
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
       <file leaf-file-name="aanbodpagina.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Html pagina's/Algemeen/aanbodpagina.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="258">
               <caret line="74" column="56" selection-start-line="74" selection-start-column="56" selection-end-line="74" selection-end-column="56" />
               <folding>
                 <element signature="e#548#639#0#PHP" expanded="true" />
                 <marker date="1481548648398" expanded="true" signature="801:822" ph="SELECT * FRO... product" />
               </folding>
+=======
+            <state relative-caret-position="-1667">
+              <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+>>>>>>> origin/master
+              <folding />
+>>>>>>> origin/master
             </state>
           </provider>
         </entry>
@@ -72,6 +92,54 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+=======
+      <file leaf-file-name="aanbodpagina.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Html pagina's/4. Producten/aanbodpagina.php">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="657">
+              <caret line="58" column="6" selection-start-line="58" selection-start-column="6" selection-end-line="58" selection-end-column="6" />
+=======
+            <state relative-caret-position="15">
+              <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+>>>>>>> Stashed changes
+              <folding />
+=======
+            <state relative-caret-position="457">
+              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <folding>
+                <element signature="e#530#621#0#PHP" expanded="true" />
+                <marker date="1481537720638" expanded="true" signature="743:764" ph="SELECT * FRO... product" />
+              </folding>
+>>>>>>> origin/master
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
+      <file leaf-file-name="navigation.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Html pagina's/navigationbar/navigation.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="832">
+              <caret line="58" column="6" selection-start-line="58" selection-start-column="6" selection-end-line="58" selection-end-column="6" />
+              <folding />
+=======
+      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Html pagina's/3. Inloggen/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1481284487585" expanded="true" signature="1877:1883" ph=" " />
+                <marker date="1481284487585" expanded="true" signature="1977:1983" ph=" " />
+              </folding>
+>>>>>>> origin/master
+            </state>
+          </provider>
+        </entry>
+      </file>
+>>>>>>> origin/master
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -94,9 +162,14 @@
         <option value="$PROJECT_DIR$/Html pagina's/navigationbar/navigation.html" />
         <option value="$PROJECT_DIR$/Html pagina's/1. Home page/homepage.css" />
         <option value="$PROJECT_DIR$/Html pagina's/2. Registreren/registreren.css" />
-        <option value="$PROJECT_DIR$/Html pagina's/1. Home page/homepage.html" />
         <option value="$PROJECT_DIR$/Html pagina's/2. Registreren/Registreren.html" />
+<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/Html pagina's/1. Home page/productitempagina.php" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/Html pagina's/1. Home page/homepage.html" />
+>>>>>>> Stashed changes
+=======
         <option value="$PROJECT_DIR$/Html pagina's/1. Home page/itempagina.html" />
         <option value="$PROJECT_DIR$/Html pagina's/Algemeen/itempagina.html" />
         <option value="$PROJECT_DIR$/Html pagina's/4. Producten/aanbodpagina.html" />
@@ -104,6 +177,7 @@
         <option value="$PROJECT_DIR$/Html pagina's/Algemeen/database.php" />
         <option value="$PROJECT_DIR$/Html pagina's/Algemeen/aanbodpagina.php" />
         <option value="$PROJECT_DIR$/Html pagina's/Algemeen/itempage.php" />
+>>>>>>> origin/master
       </list>
     </option>
   </component>
@@ -115,9 +189,15 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds">
+<<<<<<< Updated upstream
     <option name="x" value="-10" />
     <option name="width" value="1924" />
     <option name="height" value="983" />
+=======
+    <option name="y" value="22" />
+    <option name="width" value="1394" />
+    <option name="height" value="878" />
+>>>>>>> Stashed changes
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -279,13 +359,37 @@
       <workItem from="1480934738257" duration="2964000" />
       <workItem from="1480967220320" duration="1079000" />
       <workItem from="1480968326740" duration="1977000" />
+<<<<<<< Updated upstream
       <workItem from="1481015572199" duration="7380000" />
+<<<<<<< HEAD
       <workItem from="1481485176021" duration="17448000" />
+=======
+<<<<<<< HEAD
+=======
+      <workItem from="1481015572199" duration="2059000" />
+      <workItem from="1481198380224" duration="122000" />
+>>>>>>> Stashed changes
+=======
+      <workItem from="1481485176021" duration="10147000" />
+>>>>>>> origin/master
+>>>>>>> origin/master
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="50152000" />
+=======
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+    <option name="totallyTimeSpent" value="32704000" />
+=======
+    <option name="totallyTimeSpent" value="27505000" />
+>>>>>>> Stashed changes
+=======
+    <option name="totallyTimeSpent" value="42851000" />
+>>>>>>> origin/master
+>>>>>>> origin/master
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -297,6 +401,21 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+    <frame x="-10" y="0" width="1925" height="983" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2122204" sideWeight="0.49233717" order="0" side_tool="false" content_ui="combo" />
+=======
+    <frame x="0" y="22" width="1394" height="878" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21162124" sideWeight="0.49233717" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> Stashed changes
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286445" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32923833" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+=======
     <frame x="-10" y="0" width="1924" height="983" extended-state="0" />
     <editor active="true" />
     <layout>
@@ -304,12 +423,25 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286445" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32923833" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+>>>>>>> origin/master
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914847" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32608697" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19805937" sideWeight="0.50766283" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+<<<<<<< HEAD
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+=======
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+>>>>>>> origin/master
     </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -384,6 +516,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1450">
           <caret line="58" column="6" selection-start-line="58" selection-start-column="6" selection-end-line="58" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Html pagina's/1. Home page/homepage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -612,6 +752,26 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+    <entry file="file://$PROJECT_DIR$/Html pagina's/Algemeen/Registreren.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-741">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/Html pagina's/3. Inloggen/aanmelden.php" />
+    <entry file="file://$PROJECT_DIR$/Html pagina's/1. Home page/homepage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+>>>>>>> Stashed changes
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< Updated upstream
+    <entry file="file://$PROJECT_DIR$/Html pagina's/Algemeen/login.php">
+=======
     <entry file="file://$PROJECT_DIR$/Html pagina's/1. Home page/productitempagina.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -623,6 +783,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Html pagina's/2. Registreren/Registreren.html">
+>>>>>>> origin/master
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
@@ -693,8 +854,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Html pagina's/Algemeen/aanbodpagina.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="258">
           <caret line="74" column="56" selection-start-line="74" selection-start-column="56" selection-end-line="74" selection-end-column="56" />
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="2625">
+          <caret line="105" column="39" selection-start-line="102" selection-start-column="15" selection-end-line="105" selection-end-column="39" />
+=======
+    <entry file="file://$PROJECT_DIR$/Html pagina's/navigationbar/navigation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="832">
+          <caret line="58" column="6" selection-start-line="58" selection-start-column="6" selection-end-line="58" selection-end-column="6" />
+>>>>>>> Stashed changes
+          <folding />
+=======
+        <state relative-caret-position="457">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+>>>>>>> origin/master
           <folding>
             <element signature="e#548#639#0#PHP" expanded="true" />
             <marker date="1481548648398" expanded="true" signature="801:822" ph="SELECT * FRO... product" />
@@ -720,6 +897,7 @@
             <marker date="1481537720217" expanded="true" signature="1877:1883" ph=" " />
             <marker date="1481537720217" expanded="true" signature="1977:1983" ph=" " />
           </folding>
+>>>>>>> origin/master
         </state>
       </provider>
     </entry>
