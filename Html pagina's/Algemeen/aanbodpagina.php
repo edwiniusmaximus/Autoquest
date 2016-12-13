@@ -19,11 +19,9 @@
 
 // database include
 include 'database.php';
-// logo include
-include 'include/logo.php';
 
 // navbar include
- include("../navigationbar/navigation.php");
+include("../navigationbar/navigation.php");
    
 
 $stmt = $pdo->prepare("SELECT * FROM product");

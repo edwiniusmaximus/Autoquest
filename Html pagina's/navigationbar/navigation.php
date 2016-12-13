@@ -19,7 +19,7 @@
     <!--auto-onderdelen -->
         <div class="nav-items navbar-left navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="../4.%20Producten/aanbodpagina.html">Auto-onderdelen</a></li>
+                <li><a href="../Algemeen/aanbodpagina.php">Auto-onderdelen</a></li>
             </ul>
         </div>
 

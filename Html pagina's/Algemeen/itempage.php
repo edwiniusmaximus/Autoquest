@@ -16,11 +16,10 @@
 <?php
 session_start();
 
-// logo include
-include 'include/logo.php';
+
 
 // navbar include
-include 'include/navbar.php';
+include("../navigationbar/navigation.php");
 
 // database include
 include 'database.php';
