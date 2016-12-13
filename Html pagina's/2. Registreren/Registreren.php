@@ -7,15 +7,11 @@
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="icon" href="../../favicon.ico">
 
         <title>Registreren</title>
 
         <!-- Bootstrap core CSS -->
         <link href="../bootstrap-files/bootstrap.min.css" rel="stylesheet">
-
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <link href="../bootstrap-files/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
         <link href="../Algemeen/css/main.css" rel="stylesheet">
@@ -32,8 +28,7 @@
     <body>
 
     <!--navigatiebar-->
-    <?php include("../navigationbar/navigation.php");
-    ?>
+    <?php include("../navigationbar/navigation.php"); ?>
 
         <div class="container">
             <form class="form-signin">
@@ -60,9 +55,5 @@
 
 
     <?php include("../navigationbar/Footer.php"); ?>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../bootstrap-files/jquery-3.1.1.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../bootstrap-files/bootstrap.min.js"></script>
     </body>
 </html>
