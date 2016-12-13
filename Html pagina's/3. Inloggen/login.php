@@ -58,25 +58,29 @@
             print "<div class='container'>"
                     ."<div class='row myrow'>"
                     ."<div class='col-md-6'>"
-                    . "<form class='form-signin' method=POST>"
-                    . "<h2 class='form-signin-heading'>Login</h2>"
-                    // Email adres
-                    . " <label for=\"Emailadres\" class=\"sr-only\">Emailadres</label>
-                        <input type=\"email\" id=\"Emailadres\" class=\"form-control\" placeholder=\"Emailadres\" required> <br>"
-                    //Wachtwoord
-                    . "<label for=\"Wachtwoord\" class=\"sr-only\">Wachtwoord</label>
-                        <input type=\"password\" id=\"wachtwoord\" class=\"form-control\" placeholder=\"Wachtwoord\" required autofocus> <br>"
-                    ."<button id=\"RegisButton\" class=\"btn btn-lg btn-primary btn-block\" type=\"submit\">Inloggen</button>"
-                    . "</form>"
+                        ."<form class='form-signin' method=POST>"
+                                . "<h2 class='form-signin-heading'>Login</h2>"
+                                // Email adres
+                                . "<label for=\"Emailadres\" class=\"sr-only\">Emailadres</label>
+                                  <input type=\"email\" id=\"Emailadres\" class=\"form-control\" placeholder=\"Emailadres\" required> <br>"
+                                //Wachtwoord
+                                . "<label for=\"Wachtwoord\" class=\"sr-only\">Wachtwoord</label>
+                                  <input type=\"password\" id=\"wachtwoord\" class=\"form-control\" placeholder=\"Wachtwoord\" required autofocus> <br>"
+                                ."<button id=\"RegisButton\" class=\"btn btn-lg btn-primary btn-fixed\" type=\"submit\">Inloggen</button>"
+                        ."</form>"
                     ."</div>"
                     ."<div class='col-md-6'>"
-                    . "<form class='login-register' action='#'>"
-                    . "    <h2>Nog geen account?</h2>"
-                    ."<a href=\"../Registreren/registreren.php\" class=\"btn btn-lg btn-primary btn-block\" id=\"RegisButton\" role=\"button\">Registreren</a>"
-                    . "</form>"
+                        ."<form class='login-register' action='#'>"
+                            ."<h2>Nog geen account?</h2>"
+                            ."<a href=\"../2.%20Registreren/Registreren.php \" class=\"btn btn-lg btn-primary btn-fixed\" id=\"RegisButton\" role=\"button\">Registreren</a>"
+                        ."</form>"
+                    .   "<form class='login-register' action='#'>"
+                    .       "<h2>Wachtwoord vergeten?</h2>"
+                    .       "<a href=\"../2.%20Registreren/Registreren.php\" class=\"btn btn-lg btn-primary btn-fixed\" id=\"RegisButton\" role=\"button\">Wachtwoord Resetten</a>"
+                    . " </form>"
                     ."</div>"
                     ."</div>"
-                    ."</div>";
+                ."</div>";
             //footer
         include("../navigationbar/Footer.php");
             exit();

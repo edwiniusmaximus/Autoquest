@@ -70,10 +70,7 @@ include("../navigationbar/navigation.php");
     </div>
 </div>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="../bootstrap-files/https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../bootstrap-files/js/bootstrap.min.js"></script>
+<?php include("../navigationbar/Footer.php"); ?>
 </body>
 </html>
 
