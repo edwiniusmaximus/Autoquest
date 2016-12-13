@@ -8,9 +8,9 @@
     <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
-    <link href="../Tijdelijke%20prullenbak/bootstrap.min.css" rel="stylesheet">
+    <link href="../bootstrap-files/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-<!--    <link href="css/main.css" rel="stylesheet">-->
+
 
 </head>
 <body>
@@ -23,7 +23,8 @@ include 'database.php';
 include 'include/logo.php';
 
 // navbar include
-include 'include/navbar.php';
+ include("../navigationbar/navigation.php");
+   
 
 $stmt = $pdo->prepare("SELECT * FROM product");
 
@@ -31,7 +32,7 @@ $stmt->execute();
 
 ?>
 
-<div class="aanbod-wrapper col-md-3">
+    <div class="aanbod-wrapper" class="cod-md-3">
     <div class="aanbod-sidebar-wrapper">
         <ul class="aanbod-sidebar-nav">
             <li class="aanbod-filter-title"><h4>Filter uw resultaten</h4></li>
