@@ -9,7 +9,8 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
+    <link href="../4.%20Producten/aanbodpagina.css" rel="stylesheet">
+<!--    <link href="css/main.css" rel="stylesheet">-->
 
 </head>
 <body>
@@ -30,7 +31,7 @@ $stmt->execute();
 
 ?>
 
-<div class="aanbod-wrapper">
+<div class="aanbod-wrapper col-md-3">
     <div class="aanbod-sidebar-wrapper">
         <ul class="aanbod-sidebar-nav">
             <li class="aanbod-filter-title"><h4>Filter uw resultaten</h4></li>
@@ -51,7 +52,7 @@ $stmt->execute();
         </ul>
     </div>
     <div class="container">
-        <table class="col-md-11">
+        <table class="col-md-9">
             <tr>
                 <th class="col-md-2">Foto</th>
                 <th class="col-md-7">Productnaam</th>
