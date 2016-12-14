@@ -34,7 +34,7 @@ include("../navigationbar/navigation.php");
 
 <div class="container">
     <div class="row">
-        <table class="col-md-7 producten">
+        <table class="col-md-6 producten table">
             <tr>
                 <th>Product</th>
                 <th>Prijs</th>
@@ -46,27 +46,30 @@ include("../navigationbar/navigation.php");
                 <td>Cell</td>
             </tr>
         </table>
-        <table class="col-md-4 overzicht">
-            <tr>
-                <th>Betaal Overzicht</th>
-            </tr>
-            <tr>
-                <td>Subtotaal</td>
-                <td>5 euro</td>
-            </tr>
-            <tr>
-                <td>Verzendkosten</td>
-                <td>5 euro</td>
-            </tr>
-            <tr>
-                <td>Totaal</td>
-                <td>10 euro</td>
-            </tr>
+        <div class="col-md-4 overzichtdiv">
+            <table class="overzicht table">
+                <tr>
+                    <th>Betaal Overzicht</th>
+                </tr>
+                <tr>
+                    <td>Subtotaal</td>
+                    <td>5 euro</td>
+                </tr>
+                <tr>
+                    <td>Verzendkosten</td>
+                    <td>5 euro</td>
+                </tr>
+                <tr>
+                    <td>Totaal</td>
+                    <td>10 euro</td>
+                </tr>
+            </table>
+            <form class="bestelknop">
+                <button>Bestellen</button>
+            </form>
+        </div>
 
-        </table>
-        <form>
-            <button>Bestellen</button>
-        </form>
+
     </div>
 </div>
 

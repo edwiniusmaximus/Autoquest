@@ -213,8 +213,17 @@
 
 }
 
-.overzicht {
+.producten th {
+    font-size: larger;
+}
+
+.overzichtdiv {
     background-color: #c6c8cd;
+}
+
+.bestelknop {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .overzicht td {
