@@ -13,10 +13,10 @@
     </head>
     <body>
         <!-- logo -->
-        <?php include 'include/logo.php'; ?>
+     <?php //include 'include/logo.php'; ?>
 
         <!-- navigation bar -->
-        <?php include 'include/navbar.php'; ?>
+        <?php include("../navigationbar/navigation.php"); ?>
 
         <!-- login script -->
         <?php
@@ -56,7 +56,7 @@
                     . "</form>"
                     . "</div>";
             //footer
-            include 'include/footer.php';
+            include("../navigationbar/Footer.php");
             exit();
         };
 
