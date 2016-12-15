@@ -16,8 +16,6 @@
 <?php
 session_start();
 
-
-
 // navbar include
 include("../navigationbar/navigation.php");
 

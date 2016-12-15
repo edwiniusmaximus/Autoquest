@@ -27,8 +27,10 @@
  * Date: 13-12-2016
  * Time: 20:55
  */
-
+// include navbar
 include("../navigationbar/navigation.php");
+
+
 
 ?>
 
