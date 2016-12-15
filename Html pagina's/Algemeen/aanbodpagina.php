@@ -21,9 +21,21 @@
 
 // navbar include
         include("../navigationbar/navigation.php");
-
-
-        $stmt = $pdo->prepare("SELECT * FROM product");
+        
+        
+        if (isset($_GET['submit'])) {
+            if ($_GET['merk'] != '-') {
+                $temp_merk = $_GET['merk'];
+                $query = "SELECT * FROM product WHERE merk = '" . trim($temp_merk) . "'";
+            } else {
+                $query = "SELECT * FROM product";
+            }
+        } else {
+            // dan misschien product.
+            $query = "SELECT * FROM product";
+        }
+        
+        $stmt = $pdo->prepare($query);
 
         $stmt->execute();
         ?>
@@ -33,46 +45,50 @@
                 <ul class="aanbod-sidebar-nav">
                     <li class="aanbod-filter-title"><h4>Filter uw resultaten</h4></li>
                     <li>
-                        <form class="aanbod-form-search"> Zoek:<br>
+                        <form method="get" action="aanbodpagina.php" class="aanbod-form-search"> Zoek:<br>
                             <input type="text" class="form-control" name="zoek" value="Zoeken">
-                        </form> <Br>
-                    </li>
-                    <li class="aanbod-dropdown-merk"> Automerk:<Br>
-                        <select name="merk">
-                            <?php
-                            $stmt1 = $pdo->prepare("SELECT merk FROM product");
-                            $stmt1->execute();
-                            
-                            while ($row = $stmt1->fetch()) {
-                                $merk = $row["merk"];
-                                print "<option value= ' " . $row['merk'] . " '>" . $row['merk'] . "</option>"; 
-                            }
-                            ?>
-                        </select></li> <br>
-                    <li class="aanbod-dropdown-bouwjaar"> Bouwjaar:<Br>
-                        <select name="bouwjaar">
-                        <?php
-                            $stmt2 = $pdo->prepare("SELECT bouwjaar FROM product");
-                            $stmt2->execute();
-                            
-                            while ($row = $stmt2->fetch()) {
-                                $merk = $row["bouwjaar"];
-                                print "<option value= ' " . $row['bouwjaar'] . " '>" . $row['bouwjaar'] . "</option>"; 
-                            }
-                            ?></select></li> <br>
-                    <li class="aanbod-dropdown-onderdeel"> Type onderdeel:<Br>
-                        <select name="onderdeel">
-                        <?php
-                            $stmt3 = $pdo->prepare("SELECT categorienaam FROM product");
-                            $stmt3->execute();
-                            
-                            while ($row = $stmt3->fetch()) {
-                                $merk = $row["categorienaam"];
-                                print "<option value= ' " . $row['categorienaam'] . " '>" . $row['categorienaam'] . "</option>"; 
-                            }
-                            ?></select></li> <br>
-                    <li> <form class="aanbod-search-button">
-                            <input type="submit" value="Zoeken" </form>
+                            <Br>
+                            </li>
+                            <li class="aanbod-dropdown-merk"> Automerk:<Br>
+                                <select name="merk">
+                                    <?php
+                                    $stmt1 = $pdo->prepare("SELECT distinct merk FROM product");
+                                    $stmt1->execute();
+
+                                    print "<option>" . "-" . "</option>";
+                                    while ($row = $stmt1->fetch()) {
+                                        $merk = $row["merk"];
+                                        print "<option value= ' " . $row['merk'] . " '>" . $row['merk'] . "</option>";
+                                    }
+                                    ?>
+                                </select></li> <br>
+                            <li class="aanbod-dropdown-bouwjaar"> Bouwjaar:<Br>
+                                <select name="bouwjaar">
+                                    <?php
+                                    $stmt2 = $pdo->prepare("SELECT distinct bouwjaar FROM product");
+                                    $stmt2->execute();
+
+                                    print "<option>" . "-" . "</option>";
+                                    while ($row = $stmt2->fetch()) {
+                                        $bouwjaar = $row["bouwjaar"];
+                                        print "<option value= ' " . $row['bouwjaar'] . " '>" . $row['bouwjaar'] . "</option>";
+                                    }
+                                    ?></select></li> <br>
+                            <li class="aanbod-dropdown-onderdeel"> Type onderdeel:<Br>
+                                <select name="onderdeel">
+                                    <?php
+                                    $stmt3 = $pdo->prepare("SELECT distinct categorienaam FROM product");
+                                    $stmt3->execute();
+
+                                    print "<option>" . "-" . "</option>";
+                                    while ($row = $stmt3->fetch()) {
+                                        $merk = $row["categorienaam"];
+                                        print "<option value= ' " . $row['categorienaam'] . " '>" . $row['categorienaam'] . "</option>";
+                                    }
+                                    ?></select></li> <br>
+                            <li> 
+                                <input class="aanbod-search-button" type="submit" name='submit' value="Zoeken">
+                        </form>
                     </li>
                 </ul>
             </div>
