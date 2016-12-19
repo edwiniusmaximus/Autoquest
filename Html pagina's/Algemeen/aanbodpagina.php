@@ -22,19 +22,21 @@
 // navbar include
         include("../navigationbar/navigation.php");
         
+        $query = "SELECT * FROM product";
         
         if (isset($_GET['submit'])) {
             if ($_GET['merk'] != '-') {
                 $temp_merk = $_GET['merk'];
                 $query = "SELECT * FROM product WHERE merk = '" . trim($temp_merk) . "'";
-            } else {
-                $query = "SELECT * FROM product";
+            } if ($_GET['bouwjaar'] != '-') {
+                $temp_bouwjaar = $_GET ['bouwjaar'];
+                $query = "SELECT * FROM product WHERE merk = '" . trim($temp_merk) . "' AND bouwjaar = '" . trim($temp_bouwjaar) . "'";
+            } if ($_GET ['onderdeel'] != '-') {
+                $temp_categorie = $_GET ['onderdeel'];
+                $query = "SELECT * FROM product WHERE merk = '" . trim($temp_merk) . "' AND bouwjaar = '" . trim($temp_bouwjaar) . "' AND categorienaam = '" . trim($temp_categorie) . "'";
             }
-        } else {
-            // dan misschien product.
-            $query = "SELECT * FROM product";
         }
-        
+           
         $stmt = $pdo->prepare($query);
 
         $stmt->execute();
