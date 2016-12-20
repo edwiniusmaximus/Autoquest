@@ -25,6 +25,9 @@ include 'database.php';
 $productnummer = $_GET["rowid"];
 $stmt = $pdo->prepare("SELECT * FROM product WHERE productnummer = ?");
 $stmt ->execute(array($productnummer));
+
+// het productnummer wordt hier opgeslagen als referentie in winkelwagen
+$_SESSION['productnummer'] = $productnummer;
 ?>
 
 <div class="container">
@@ -67,9 +70,10 @@ $stmt ->execute(array($productnummer));
             echo "<p>omschrijving: " . $omschrijving . "</p>";
             echo "<h3>" . $prijs . " euro</h3>";
             ?>
-            <form method="get">
+            <form method="GET" action="winkelwagen.php">
                 <input type="text" name="aantal" value="aantal"><br>
-                <button>Toevoegen aan winkelwagen</button>
+                <input type="submit" value="Toevoegen aan winkelwagen">
+                <?php  ?>
             </form>
         </div>
     </div>
