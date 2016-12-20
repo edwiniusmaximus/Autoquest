@@ -25,16 +25,32 @@
         $query = "SELECT * FROM product";
         
         if (isset($_GET['submit'])) {
+            if ($_GET['zoek'] != '') {
+                $temp_zoek = $_GET['zoek'];
+                $query = "SELECT * FROM product WHERE naam = '%" . trim($temp_zoek) . "%' OR omschrijving = '%" . trim($temp_zoek) . "%'";
+            }
             if ($_GET['merk'] != '-') {
                 $temp_merk = $_GET['merk'];
                 $query = "SELECT * FROM product WHERE merk = '" . trim($temp_merk) . "'";
             } if ($_GET['bouwjaar'] != '-') {
-                $temp_bouwjaar = $_GET ['bouwjaar'];
-                $query = "SELECT * FROM product WHERE merk = '" . trim($temp_merk) . "' AND bouwjaar = '" . trim($temp_bouwjaar) . "'";
-            } if ($_GET ['onderdeel'] != '-') {
-                $temp_categorie = $_GET ['onderdeel'];
-                $query = "SELECT * FROM product WHERE merk = '" . trim($temp_merk) . "' AND bouwjaar = '" . trim($temp_bouwjaar) . "' AND categorienaam = '" . trim($temp_categorie) . "'";
+                $temp_bouwjaar = $_GET['bouwjaar'];
+                $query = "SELECT * FROM product WHERE bouwjaar = '" . trim($temp_bouwjaar) . "'";
+            } if ($_GET['onderdeel'] != '-') {
+                $temp_categorie = $_GET['onderdeel'];
+                $query = "SELECT * FROM product WHERE categorienaam = '" . trim($temp_categorie) . "'";
             }
+            if ($_GET['merk'] != '-' && $_GET['bouwjaar'] != '-') {
+                $query = "SELECT * FROM product WHERE merk = '" . trim($temp_merk) . "' AND bouwjaar = '" . trim($temp_bouwjaar) . "'";
+            }
+            if ($_GET['merk'] != '-' && $_GET['onderdeel'] != '-') {
+                $query = "SELECT * FROM product WHERE merk = '" . trim($temp_merk) . "' AND categorienaam = '" . trim($temp_categorie) . "'";
+            }
+            if ($_GET['bouwjaar'] != '-' && $_GET['onderdeel'] != '-') {
+                $query = "SELECT * FROM product WHERE bouwjaar = '" . trim($temp_bouwjaar) . "' AND categorienaam = '" . trim ($temp_categorie) . "'";
+            }
+            
+            
+            
         }
            
         $stmt = $pdo->prepare($query);
