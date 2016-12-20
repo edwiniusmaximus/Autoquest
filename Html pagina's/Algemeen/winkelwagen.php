@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+/**
+ * Created by PhpStorm.
+ * User: Niels Helmantel
+ * Date: 13-12-2016
+ * Time: 20:55
+ */
+
+include("../navigationbar/navigation.php");
+include "database.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,17 +35,16 @@
 <body>
 
 <?php
-/**
- * Created by PhpStorm.
- * User: Niels Helmantel
- * Date: 13-12-2016
- * Time: 20:55
- */
-// include navbar
-include("../navigationbar/navigation.php");
+$productnummer = $_SESSION['productnummer'];
 
+$stmt = $pdo->prepare("SELECT * FROM product WHERE productnummer = ?");
+$stmt ->execute(array($productnummer));
 
-
+while ($row = $stmt->fetch()) {
+    $naam = $row["naam"];
+    $prijs = $row["prijs"];
+    $aantal = $_GET['aantal'];
+}
 ?>
 
 <div class="container">
@@ -42,11 +55,16 @@ include("../navigationbar/navigation.php");
                 <th>Prijs</th>
                 <th>Aantal</th>
             </tr>
-            <tr>
-                <td>Cell</td>
-                <td>Cell</td>
-                <td>Cell</td>
-            </tr>
+
+            <?php
+
+            echo "<tr>";
+            echo "<td>" . $naam . "</td>";
+            echo "<td>" . $prijs . " euro</td>";
+            echo "<td>" . $aantal . "</td>";
+            echo "</tr>";
+
+            ?>
         </table>
         <div class="col-md-4 overzichtdiv">
             <table class="overzicht table">
