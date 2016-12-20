@@ -37,13 +37,15 @@ include "database.php";
 <?php
 $productnummer = $_SESSION['productnummer'];
 
+print_r($_POST);
+
 $stmt = $pdo->prepare("SELECT * FROM product WHERE productnummer = ?");
 $stmt ->execute(array($productnummer));
 
 while ($row = $stmt->fetch()) {
     $naam = $row["naam"];
     $prijs = $row["prijs"];
-    $aantal = $_GET['aantal'];
+
 }
 ?>
 
@@ -61,7 +63,7 @@ while ($row = $stmt->fetch()) {
             echo "<tr>";
             echo "<td>" . $naam . "</td>";
             echo "<td>" . $prijs . " euro</td>";
-            echo "<td>" . $aantal . "</td>";
+//            echo "<td>" . $aantal . "</td>";
             echo "</tr>";
 
             ?>
