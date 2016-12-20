@@ -70,11 +70,10 @@ $_SESSION['productnummer'] = $productnummer;
             echo "<p>omschrijving: " . $omschrijving . "</p>";
             echo "<h3>" . $prijs . " euro</h3>";
             ?>
-            <form method="POST" action="winkelwagen.php">
+            <form method="GET" action="winkelwagen.php">
                 <input type="hidden" name="productnummer" value="<?php print $productnummer ?>">
                 <input type="text" name="aantal" value="aantal"><br>
                 <input type="submit" value="Toevoegen aan winkelwagen">
-                <?php  ?>
             </form>
         </div>
     </div>

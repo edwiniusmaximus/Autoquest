@@ -35,18 +35,33 @@ include "database.php";
 <body>
 
 <?php
-$productnummer = $_SESSION['productnummer'];
 
-print_r($_POST);
+// GET moet POST worden. Door probleem met usbwebserver tijdelijk aangepast
+// proces: bestelregel toevoegen -> bestelregel opvragen -> bestelregel printen in winkelwagen
+if (isset($_GET)) {
 
-$stmt = $pdo->prepare("SELECT * FROM product WHERE productnummer = ?");
-$stmt ->execute(array($productnummer));
+    $stmt = $pdo->prepare("INSERT INTO `mydb`.`bestelregel` 
+(`bestelnummer`, `emailadres`, `productnummer`, `aantal`, 
+`datum`, `betaald`) VALUES (:bestelnummer, :emailadres, :productnummer, 
+:aantal, :datum, :betaald)");
 
-while ($row = $stmt->fetch()) {
-    $naam = $row["naam"];
-    $prijs = $row["prijs"];
-    $aantal = $_GET['aantal'];
+    $stmt->bindParam(':bestelnummer', $bestelnummer);
+    $stmt->bindParam(':emailadres', $emailadres);
+    $stmt->bindParam(':productnummer', $productnummer);
+    $stmt->bindParam(':aantal', $aantal);
+    $stmt->bindParam(':datum', $datum);
+    $stmt->bindParam(':betaald', $betaald);
+
+    $aantal = $_GET["aantal"];
+    $productnummer = $_GET["productnummer"];
+    $bestelnummer =+ 1;
+    $emailadres = 'testklant@gmail.com';
+    $datum = date("Y-m-d H:i:s");
+    $betaald = 0;
+
+    $stmt->execute();
 }
+
 ?>
 
 <div class="container">
@@ -57,16 +72,6 @@ while ($row = $stmt->fetch()) {
                 <th>Prijs</th>
                 <th>Aantal</th>
             </tr>
-
-            <?php
-
-            echo "<tr>";
-            echo "<td>" . $naam . "</td>";
-            echo "<td>" . $prijs . " euro</td>";
-            echo "<td>" . $aantal . "</td>";
-            echo "</tr>";
-
-            ?>
         </table>
         <div class="col-md-4 overzichtdiv">
             <table class="overzicht table">

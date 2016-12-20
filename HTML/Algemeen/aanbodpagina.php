@@ -48,9 +48,6 @@
             if ($_GET['bouwjaar'] != '-' && $_GET['onderdeel'] != '-') {
                 $query = "SELECT * FROM product WHERE bouwjaar = '" . trim($temp_bouwjaar) . "' AND categorienaam = '" . trim ($temp_categorie) . "'";
             }
-            
-            
-            
         }
            
         $stmt = $pdo->prepare($query);
