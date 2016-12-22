@@ -27,7 +27,7 @@
         if (isset($_GET['submit'])) {
             if ($_GET['zoek'] != '') {
                 $temp_zoek = $_GET['zoek'];
-                $query = "SELECT * FROM product WHERE naam = '%" . trim($temp_zoek) . "%' OR omschrijving = '%" . trim($temp_zoek) . "%'";
+                $query = "SELECT * FROM product WHERE naam LIKE '%" . $temp_zoek . "%' OR omschrijving LIKE '%" . $temp_zoek . "%'";
             }
             if ($_GET['merk'] != '-') {
                 $temp_merk = $_GET['merk'];
