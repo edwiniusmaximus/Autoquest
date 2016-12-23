@@ -21,41 +21,46 @@
 
 // navbar include
         include("../navigationbar/navigation.php");
-        
+
         $query = "SELECT * FROM product";
-        
+        $temp_array = [];
         if (isset($_GET['submit'])) {
             if ($_GET['zoek'] != '') {
-                $temp_zoek = $_GET['zoek'];
-                $query = "SELECT * FROM product WHERE naam LIKE '%" . $temp_zoek . "%' OR omschrijving LIKE '%" . $temp_zoek . "%'";
+                
+                $query = "SELECT * FROM product WHERE naam LIKE ? OR omschrijving LIKE ?";
+                $temp_array[0] = "%" . $_GET['zoek'] ."%";
+                $temp_array[1] = "%" . $_GET['zoek'] ."%";
             }
             if ($_GET['merk'] != '-') {
-                $temp_merk = $_GET['merk'];
-                $query = "SELECT * FROM product WHERE merk = '" . trim($temp_merk) . "'";
+                $temp_array[0] = trim($_GET['merk']);
+                $query = "SELECT * FROM product WHERE merk = ?";
             } if ($_GET['bouwjaar'] != '-') {
-                $temp_bouwjaar = $_GET['bouwjaar'];
-                $query = "SELECT * FROM product WHERE bouwjaar = '" . trim($temp_bouwjaar) . "'";
+                $temp_array[0] = $_GET['bouwjaar'];
+                $query = "SELECT * FROM product WHERE bouwjaar = ?";
             } if ($_GET['onderdeel'] != '-') {
-                $temp_categorie = $_GET['onderdeel'];
-                $query = "SELECT * FROM product WHERE categorienaam = '" . trim($temp_categorie) . "'";
+                $temp_array[0] = trim($_GET['onderdeel']);
+                $query = "SELECT * FROM product WHERE categorienaam = ?";
             }
             if ($_GET['merk'] != '-' && $_GET['bouwjaar'] != '-') {
-                $query = "SELECT * FROM product WHERE merk = '" . trim($temp_merk) . "' AND bouwjaar = '" . trim($temp_bouwjaar) . "'";
+                $temp_array[0] = trim($_GET['merk']);
+                $temp_array[1] = $_GET['bouwjaar'];
+                $query = "SELECT * FROM product WHERE merk = ? AND bouwjaar = ?";
             }
             if ($_GET['merk'] != '-' && $_GET['onderdeel'] != '-') {
-                $query = "SELECT * FROM product WHERE merk = '" . trim($temp_merk) . "' AND categorienaam = '" . trim($temp_categorie) . "'";
+                $temp_array[0] = trim($_GET['merk']);
+                $temp_array[1] = trim($_GET['onderdeel']);
+                $query = "SELECT * FROM product WHERE merk = ? AND categorienaam = ?";
             }
             if ($_GET['bouwjaar'] != '-' && $_GET['onderdeel'] != '-') {
-                $query = "SELECT * FROM product WHERE bouwjaar = '" . trim($temp_bouwjaar) . "' AND categorienaam = '" . trim ($temp_categorie) . "'";
+                $temp_array[0] = $_GET['bouwjaar'];
+                $temp_array[1] = trim($_GET['onderdeel']);
+                $query = "SELECT * FROM product WHERE bouwjaar = ? AND categorienaam = ?";
             }
-            
-            
-            
-        }
-           
-        $stmt = $pdo->prepare($query);
-
-        $stmt->execute();
+       
+        }               
+        $stmt = $pdo->prepare($query);   
+        $stmt->execute($temp_array);
+        
         ?>
 
         <div class="aanbod-wrapper" class="cod-md-3">
@@ -64,11 +69,13 @@
                     <li class="aanbod-filter-title"><h4>Filter uw resultaten</h4></li>
                     <li>
                         <form method="get" action="aanbodpagina.php" class="aanbod-form-search"> Zoek:<br>
-                            <input type="text" class="form-control" name="zoek" value="Zoeken">
+                            <input type="text" class="form-control" name="zoek" value="<?php if (isset($_GET['zoek'])) {
+                            print htmlentities($_GET['zoek']); } ?>">
+        
                             <Br>
                             </li>
                             <li class="aanbod-dropdown-merk"> Automerk:<Br>
-                                <select name="merk">
+                                <select name="merk" id="merk">
                                     <?php
                                     $stmt1 = $pdo->prepare("SELECT distinct merk FROM product");
                                     $stmt1->execute();
@@ -79,9 +86,12 @@
                                         print "<option value= ' " . $row['merk'] . " '>" . $row['merk'] . "</option>";
                                     }
                                     ?>
+                                    <script type="text/javascript">
+                                        document.getElementById('merk').value = "<?php print $_GET['merk']; ?>";
+                                    </script> 
                                 </select></li> <br>
                             <li class="aanbod-dropdown-bouwjaar"> Bouwjaar:<Br>
-                                <select name="bouwjaar">
+                                <select name="bouwjaar" id="bouwjaar">
                                     <?php
                                     $stmt2 = $pdo->prepare("SELECT distinct bouwjaar FROM product");
                                     $stmt2->execute();
@@ -91,9 +101,13 @@
                                         $bouwjaar = $row["bouwjaar"];
                                         print "<option value= ' " . $row['bouwjaar'] . " '>" . $row['bouwjaar'] . "</option>";
                                     }
-                                    ?></select></li> <br>
+                                    ?>
+                                    <script type="text/javascript">
+                                        document.getElementById('bouwjaar').value = "<?php print $_GET['bouwjaar']; ?>";
+                                    </script>
+                                </select></li> <br>
                             <li class="aanbod-dropdown-onderdeel"> Type onderdeel:<Br>
-                                <select name="onderdeel">
+                                <select name="onderdeel" id="onderdeel">
                                     <?php
                                     $stmt3 = $pdo->prepare("SELECT distinct categorienaam FROM product");
                                     $stmt3->execute();
@@ -103,7 +117,11 @@
                                         $merk = $row["categorienaam"];
                                         print "<option value= ' " . $row['categorienaam'] . " '>" . $row['categorienaam'] . "</option>";
                                     }
-                                    ?></select></li> <br>
+                                    ?>
+                                    <script type="text/javascript">
+                                        document.getElementById('onderdeel').value = "<?php print $_GET['onderdeel']; ?>";
+                                    </script>
+                                </select></li> <br>
                             <li> 
                                 <input class="aanbod-search-button" type="submit" name='submit' value="Zoeken">
                         </form>
@@ -118,7 +136,7 @@
                         <th class="col-md-2">Prijs</th>
                     </tr>
                     <?php
-                    while ($row = $stmt->fetch()) {
+                    while ($row = $stmt->fetch()) {                        
                         $productnummer = $row["productnummer"];
                         $naam = $row["naam"];
                         $prijs = $row["prijs"];
