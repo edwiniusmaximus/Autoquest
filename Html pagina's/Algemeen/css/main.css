@@ -178,6 +178,9 @@
     border: 1px black solid;
 }
 
+.aanbod-image img {
+    width: 30px;
+    height: 30px;
     
 }
 
