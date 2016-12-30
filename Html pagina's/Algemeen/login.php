@@ -5,93 +5,147 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Autoquest - Login</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Inloggen</title>
+
         <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" type="text/css" href="../Tijdelijke%20prullenbak/bootstrap.css">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
         <!-- Custom styles for this template -->
         <link href="css/main.css" rel="stylesheet">
     </head>
     <body>
-        <!-- logo -->
-     <?php //include 'include/logo.php'; ?>
-
-        <!-- navigation bar -->
-        <?php include("../navigationbar/navigation.php"); ?>
-
-        <!-- login script -->
         <?php
-        start_secure_session();
+        //database connectie.
+        include("include/database.php");
 
-        function start_secure_session() {
-            session_name("wikel-app-session");
-            // Forces sessions to only use cookies.
-            if (ini_set('session.use_only_cookies', 1) === FALSE) {
-                header("Location: ../error.php?err=Could not initiate a safe session (ini_set)");
-                exit();
-            }
-            // Gets current cookies params.
-            $cookieParams = session_get_cookie_params();
-            // to set secure to TRUE you need to setup https
-            $secure = FALSE;
-            session_set_cookie_params(
-                    $cookieParams["lifetime"], $cookieParams["path"], $cookieParams["domain"], $secure, TRUE
-            );
-            session_start();
-            //session_regenerate_id(true);
+        //cookies.
+        include("include/cookies.php");
+
+        checkLogin();
+
+        //navigation bar.
+        include("include/navigation.php");
+
+
+        //login & registreer box.
+        $form = "<div class='container'>"
+                . "<div class='row myrow'>"
+                . "<div class='col-md-6'>"
+                . "<form class='form-signin' action='' method='POST'>"
+                . "<h2 class='form-signin-heading'>Login</h2>"
+                // Input email adres.
+                . "<label for=\"Emailadres\" class=\"sr-only\">Emailadres</label>
+                   <input type=\"email\" id=\"Emailadres\" name=\"emailadres\" class=\"form-control\" placeholder=\"emailadres\" required='required'> <br>"
+                // Input wachtwoord.
+                . "<label for=\"Wachtwoord\" class=\"sr-only\">Wachtwoord</label>
+                   <input type=\"password\" id=\"wachtwoord\" name=\"pass\" class=\"form-control\" placeholder=\"wachtwoord\" required='required' autofocus> <br>"
+                // login button.
+                . "<button id=\"RegisButton\" class=\"btn btn-lg btn-primary btn-fixed\" type=\"submit\" name=\"submit\">Inloggen</button>"
+                . "</form>"
+                . "</div>"
+                . "<div class='col-md-6'>"
+                . "<form class='login-register' action='#'>"
+                . "<h2>Nog geen account?</h2>"
+                // registreer button.
+                . "<a href='#' class=\"btn btn-lg btn-primary btn-fixed\" id=\"RegisButton\" role=\"button\">Registreren</a>"
+                . "</form>"
+                . "<form class='login-register' action='#'>"
+                . "<h2>Wachtwoord vergeten?</h2>"
+                // wachtwoord vergeten button.
+                . "<a href='#' class=\"btn btn-lg btn-primary btn-fixed\" id=\"RegisButton\" role=\"button\">Wachtwoord Resetten</a>"
+                . " </form>"
+                . "</div>"
+                . "</div>"
+                . "</div>";
+        //footer
+        include("include/Footer.php");
+
+
+
+        if (!isset($_POST['submit'])) {
+            print $form;
         }
 
-        if (!is_logged_in()) {
+        //functie welke rol krijgt welke gebruiker.
+        function getRol() { //geef rol 1 aan klanten.
+            global $pdo;
+            $rol = 0; // Geef waarde 0 voor gast.
+            if (isset($_SESSION['logged_in']) AND isset($_SESSION['emailadres']) AND $_SESSION['logged_in'] == true AND ! empty($_SESSION['emailadres'])) {
+                $query = $pdo->prepare("SELECT * FROM emailadres WHERE emailadres = :email");
+                $query->execute(array(':email' => $_SESSION['emailadres']));
+                $gebruiker = $query->fetch(PDO::FETCH_OBJ);
 
-            //login box & register button
-            print "<div class=login-box >"
-                    . "<form class=login-form method=POST>"
-                    . "<h2>Login</h2>"
-                    . "   <LABEL>Email adres&nbsp;</LABEL><INPUT type='text' name='emailadres'><br>"
-                    . "   <LABEL>Wachtwoord&nbsp;</LABEL><INPUT type='password' name='wachtwoord'><br>"
-                    . "   <INPUT type=submit value='Login'>"
-                    . "</form>"
-                    . "<form class='login-register' action='#'>"
-                    . "    <h2>Nog geen account?</h2>"
-                    . "    <INPUT type=submit value='Register'>"
-                    . "</form>"
-                    . "</div>";
-            //footer
-            include("../navigationbar/Footer.php");
-            exit();
-        };
+                //Geef waarde 1 aan klant.
+                if ($gebruiker->rol == 1) {
+                    $rol = 1;
+                }
+                //Geef waarde 2 aan medewerker.
+                elseif ($gebruiker->rol == 2) {
+                    $rol = 2;
+                }
+                //Geef waarde 3 aan admin.
+                elseif ($gebruiker->rol == 3) {
+                    $rol = 3;
+                }
+            }
+            return $rol;
+        }
 
-//login functies
-        function is_logged_in() {
-            if (isset($_SESSION["emailadres"])) {
-                return TRUE;
-            } else {
-                if (isset($_POST['emailadres'])) {
-                    if ($_POST['emailadres'] == "admin" && $_POST['wachtwoord'] == "wachtwoord") {
-                        $_SESSION["emailadres"] = $_POST["emailadres"];
-                        return TRUE;
+// Redirect gebruikers naar index pagina.
+        function userExit() {
+            if (getRol() <= 1) {
+                header('Location: /');
+                exit;
+            }
+        }
+
+// Redirect gast naar login page.
+        function guestExit() {
+            if (getRol() == 0) {
+                header('Location: registreren.php');
+                exit;
+            }
+        }
+
+// Redirect iedereen behalve medewerker.
+        function medewerkerOnly($rol) {
+            if (getRol() < 2) {
+                header('Location: /');
+                exit;
+            }
+        }
+
+// Redirect iedereen behalve admin.
+        function adminOnly($rol) {
+            if (getRol() < 3) {
+                header('Location: /adminpanel/overview.php');
+                exit;
+            }
+        }
+
+        function checkLogin() {
+            global $pdo;
+            // checked submit knop, en of waardes zijn ingevuld. Anders melding gebruikersnaam of wachtwoord is incorrect.
+            if (isset($_POST['submit'])) {
+                $user = $_POST['emailadres'];
+                $pass = $_POST['pass'];
+                // checked database op ingevoerde waardes. 
+                $sql2 = "SELECT emailadres FROM account WHERE wachtwoord='" . $pass . "' AND emailadres='" . $user . "'";
+                
+                if ($res = $pdo->query($sql2)) {
+                    if ($res->rowCount() > 0) {
+
+                        $_SESSION['emailadres'] = $user;
                     } else {
-                        return FALSE;
+                        print "Gebruikersnaam of wachtwoord is incorrect! $form";
                     }
-                } else {
-                    return FALSE;
                 }
             }
         }
-
-        function get_current_username() {
-            if (is_logged_in()) {
-                return $_SESSION['emailadres'];
-            } else {
-                if (isset($_POST['emailadres'])) {
-                    if ($_POST['emailadres'] == "admin" && $_POST['wachtwoord'] == "wachtwoord") {
-                        $_SESSION['emailadres'] == $_POST['emailadres'];
-                        return $_SESSION['emailadres'];
-                    } else {
-                        return FALSE;
-                    }
-                }
-            }
-        }
-        ?>
+        ?>        
     </body>
 </html>
+
