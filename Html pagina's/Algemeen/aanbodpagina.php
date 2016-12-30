@@ -26,10 +26,10 @@
         $temp_array = [];
         if (isset($_GET['submit'])) {
             if ($_GET['zoek'] != '') {
-                
+
                 $query = "SELECT * FROM product WHERE naam LIKE ? OR omschrijving LIKE ?";
-                $temp_array[0] = "%" . $_GET['zoek'] ."%";
-                $temp_array[1] = "%" . $_GET['zoek'] ."%";
+                $temp_array[0] = "%" . $_GET['zoek'] . "%";
+                $temp_array[1] = "%" . $_GET['zoek'] . "%";
             }
             if ($_GET['merk'] != '-') {
                 $temp_array[0] = trim($_GET['merk']);
@@ -56,11 +56,9 @@
                 $temp_array[1] = trim($_GET['onderdeel']);
                 $query = "SELECT * FROM product WHERE bouwjaar = ? AND categorienaam = ?";
             }
-       
-        }               
-        $stmt = $pdo->prepare($query);   
+        }
+        $stmt = $pdo->prepare($query);
         $stmt->execute($temp_array);
-        
         ?>
 
         <div class="aanbod-wrapper" class="cod-md-3">
@@ -70,8 +68,10 @@
                     <li>
                         <form method="get" action="aanbodpagina.php" class="aanbod-form-search"> Zoek:<br>
                             <input type="text" class="form-control" name="zoek" value="<?php if (isset($_GET['zoek'])) {
-                            print htmlentities($_GET['zoek']); } ?>">
-        
+            print htmlentities($_GET['zoek']);
+        }
+        ?>">
+
                             <Br>
                             </li>
                             <li class="aanbod-dropdown-merk"> Automerk:<Br>
@@ -136,26 +136,33 @@
                         <th class="col-md-2">Prijs</th>
                     </tr>
                     <?php
-                    while ($row = $stmt->fetch()) {                        
+                    while ($row = $stmt->fetch()) {
                         $productnummer = $row["productnummer"];
                         $naam = $row["naam"];
                         $prijs = $row["prijs"];
+                        
                         echo "<tr class=\"aanbod-table-data\">";
-                        echo "<td class=\"col-md-2\">Voeg foto in.</td>";
-                        echo "<td class=\"col-md-7\"><a href=itempage.php?rowid=$productnummer>" . $naam . "</a></td>";
-                        echo "<td class=\"aanbod-prijs\">" . $prijs . " EURO" . "</td>";
-                        echo "</tr>";
-                    }
-                    ?>
-                </table>
-            </div>
-        </div>
+                        ?>
+                    <div class="container" class="aanbod-image">
+                        <?php
+                        echo "<td class='col-md-2'><img src=\"img-" . $productnummer . ".png\"></td>";
+                        ?>
+                </div>
+                <?php
+                echo "<td class=\"col-md-7\"><a href=itempage.php?rowid=$productnummer>" . $naam . "</a></td>";
+                echo "<td class=\"aanbod-prijs\">" . $prijs . " EURO" . "</td>";
+                echo "</tr>";
+            }
+            ?>
+        </table>
+    </div>
+</div>
 
-        <?php include("../navigationbar/Footer.php"); ?>
+<?php include("../navigationbar/Footer.php"); ?>
 
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="css/https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="css/js/bootstrap.min.js"></script>
-    </body>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="css/https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="css/js/bootstrap.min.js"></script>
+</body>
 </html>
