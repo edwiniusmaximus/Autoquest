@@ -28,12 +28,13 @@
     <body>
     <?php
     
-    include '../Algemeen/database.php';
+    include '../Algemeen/include/database.php';
 
     $errors         = [];
     $error_count    = 0;
-
-	if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    
+    	if($_SERVER['REQUEST_METHOD'] == 'POST') {
+          
 		$email = ($_POST['emailadres']);
 		$first_name = ($_POST['voornaam']);
 		$last_name = ($_POST['achternaam']);
@@ -60,7 +61,7 @@
 				$errors[] = 'Vul a.u.b. uw e-mailadres in.';
 				$error_count = 1;
 			}
-			if (empty($pass)) {
+			if (empty($passw)) {
 				$errors[] = 'Vul a.u.b. een wachtwoord in.';
 				$error_count = 1;
 			}
@@ -84,7 +85,7 @@
 			$error_count = 1;
 			$email = '';
 		}
-		if (!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,20}$/', $passw) && !empty($pass) && !empty($pass_rep)) { // Pass validator.
+		if (!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,20}$/', $passw) && !empty($passw) && !empty($pass_rep)) { // Pass validator.
 			$errors[] = 'Uw wachtwoord moet minimaal 1 teken en 1 nummer bevatten, tussen de 8 en 20 tekens lang zijn en mag alleen deze !@#$% speciale tekens bevatten.';
 			$error_count = 1;
 		}
@@ -92,12 +93,14 @@
 			$errors[] = 'De wachtwoorden komen niet overeen.';
 			$error_count = 1;
 		}
+                   
 		if ($error_count == 0) {
 			
-			$query = $pdo->prepare("INSERT INTO account (voornaam, achternaam, emailadres, wachtwoord) VALUES (:voornaam, :achternaam, :emailadres, :wachtwoord, NOW())");
-			$query->execute(array(':voornaam' => $first_name, ':achternaam' => $last_name, ':emailadres' => $email, ':wachtwoord' => $passw));
+			$query = $pdo->prepare("INSERT INTO account (voornaam, achternaam, emailadres, wachtwoord, rechten) VALUES (:voornaam, :achternaam, :emailadres, :wachtwoord, :rechten, NOW())");
+			$query->execute(array(':voornaam' => $first_name, ':achternaam' => $last_name, ':emailadres' => $email, ':wachtwoord' => $passw, ':rechten' => 1));
 		}
 	}
+        
 	?>
 
 
@@ -114,7 +117,7 @@
 				echo '</ul></div>';
 			}
 			?>
-            <form class="form-signin" method="post">
+            <form class="form-signin" method="post" action="Registreren.php">
                 <h2 class="form-signin-heading">Registreren</h2>
                         <!-- Voorletters -->
                         <label for="Emailadres" class="sr-only">Emailadres</label>
