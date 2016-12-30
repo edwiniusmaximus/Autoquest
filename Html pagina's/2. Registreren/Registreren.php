@@ -27,16 +27,18 @@
 
     <body>
     <?php
+    
+    include '../Algemeen/database.php';
 
     $errors         = [];
     $error_count    = 0;
 
 	if($_SERVER['REQUEST_METHOD'] == 'POST') {
-		$email = input($_POST['emailadres']);
-		$first_name = input($_POST['voornaam']);
-		$last_name = input($_POST['achternaam']);
-		$pass = input($_POST['wachtwoord']);
-		$pass_rep = input($_POST['wachtwoord2']);
+		$email = ($_POST['emailadres']);
+		$first_name = ($_POST['voornaam']);
+		$last_name = ($_POST['achternaam']);
+		$passw = ($_POST['wachtwoord']);
+		$pass_rep = ($_POST['wachtwoord2']);
 
 		$query = $pdo->prepare("SELECT emailadres FROM account WHERE emailadres = :emailadres");
 		$query->execute(array(':emailadres' => $email));
@@ -82,19 +84,18 @@
 			$error_count = 1;
 			$email = '';
 		}
-		if (!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,20}$/', $pass) && !empty($pass) && !empty($pass_rep)) { // Pass validator.
+		if (!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,20}$/', $passw) && !empty($pass) && !empty($pass_rep)) { // Pass validator.
 			$errors[] = 'Uw wachtwoord moet minimaal 1 teken en 1 nummer bevatten, tussen de 8 en 20 tekens lang zijn en mag alleen deze !@#$% speciale tekens bevatten.';
 			$error_count = 1;
 		}
-		if ($pass != $pass_rep) { // vergelijk passwords.
+		if ($passw != $pass_rep) { // vergelijk passwords.
 			$errors[] = 'De wachtwoorden komen niet overeen.';
 			$error_count = 1;
 		}
 		if ($error_count == 0) {
-			$cost = ['cost' => 12];
-			$pass = password_hash($pass, PASSWORD_BCRYPT, $cost); // Encryptie password.
+			
 			$query = $pdo->prepare("INSERT INTO account (voornaam, achternaam, emailadres, wachtwoord) VALUES (:voornaam, :achternaam, :emailadres, :wachtwoord, NOW())");
-			$query->execute(array(':first_name' => $first_name, ':last_name' => $last_name, ':email' => $email, ':password' => $pass));
+			$query->execute(array(':voornaam' => $first_name, ':achternaam' => $last_name, ':emailadres' => $email, ':wachtwoord' => $passw));
 		}
 	}
 	?>
@@ -113,25 +114,25 @@
 				echo '</ul></div>';
 			}
 			?>
-            <form class="form-signin">
+            <form class="form-signin" method="post">
                 <h2 class="form-signin-heading">Registreren</h2>
                         <!-- Voorletters -->
                         <label for="Emailadres" class="sr-only">Emailadres</label>
-                        <input type="email" id="Emailadres" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Emailadres" required><?= (isset($email))? $email:'' ?> <br>
+                        <input name="emailadres" type="email" id="emailadres" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Emailadres" required><?= (isset($email))? $email:'' ?> <br>
                         <!-- Voornaam -->
                         <label for="Voornaam" class="sr-only">Voornaam</label>
-                        <input type="text" id="Voornaam" class="form-control" placeholder="Voornaam" required><?= (isset($first_name))? $first_name:'' ?> <br>
+                        <input name="voornaam" type="text" id="voornaam" class="form-control" placeholder="Voornaam" required><?= (isset($first_name))? $first_name:'' ?> <br>
                         <!-- Achternaam -->
                         <label for="Achternaam" class="sr-only">Achternaam</label>
-                        <input type="text" id="Achternaam" class="form-control" placeholder="Achternaam" required autofocus><?= (isset($last_name))? $last_name:'' ?> <br>
+                        <input name="achternaam" type="text" id="achternaam" class="form-control" placeholder="Achternaam" required autofocus><?= (isset($last_name))? $last_name:'' ?> <br>
                         <!-- Wachtwoord -->
                         <label for="Wachtwoord" class="sr-only">Wachtwoord</label>
-                        <input type="password" id="wachtwoord" class="form-control" placeholder="Wachtwoord" required autofocus><?= (isset($pass))? $pass:'' ?> <br>
+                        <input name="wachtwoord" type="password" id="wachtwoord" class="form-control" placeholder="Wachtwoord" required autofocus><?= (isset($passw))? $passw:'' ?> <br>
                         <!-- Wachtwoord -->
                         <label for="Wachtwoord2" class="sr-only">Verifieer Wachtwoord</label>
-                        <input type="password" id="Wachtwoord2" class="form-control" placeholder="Verifieer wachtwoord" required autofocus><?= (isset($pass_rep))? $pass_rep:'' ?> <br>
+                        <input name="wachtwoord2" type="password" id="wachtwoord2" class="form-control" placeholder="Verifieer wachtwoord" required autofocus><?= (isset($pass_rep))? $pass_rep:'' ?> <br>
                         <!-- Button Registreren -->
-                        <button id="RegisButton" class="btn btn-lg btn-primary btn-block" type="submit">Registreren</button>
+                        <button id="RegisButton" class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Registreren</button>
             </form>
         </div>
 
