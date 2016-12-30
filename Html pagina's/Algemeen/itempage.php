@@ -59,7 +59,7 @@ $_SESSION['productnummer'] = $productnummer;
         <div class="col-md-5 boxmidden">
             <div class="item-image">
                 <?php
-                echo "<img src=\"img-" . $productnummer . ".jpg\">"
+                echo "<img src=\"img-" . $productnummer . ".png\">"
                 ?>
             </div>
 
@@ -70,7 +70,7 @@ $_SESSION['productnummer'] = $productnummer;
             echo "<p>omschrijving: " . $omschrijving . "</p>";
             echo "<h3>" . $prijs . " euro</h3>";
             ?>
-            <form method="POST" action="winkelwagen.php">
+            <form method="GET" action="winkelwagen.php">
                 <input type="hidden" name="productnummer" value="<?php print $productnummer ?>">
                 <input type="text" name="aantal" value="aantal"><br>
                 <input type="submit" value="Toevoegen aan winkelwagen">
