@@ -8,5 +8,6 @@
 
 $db = "mysql:host=localhost;dbname=mydb;port=3306";
 $user = "root";
-$pdo = new PDO($db, $user);
+$pass =  "usbw";
+$pdo = new PDO($db, $user, $pass);
 

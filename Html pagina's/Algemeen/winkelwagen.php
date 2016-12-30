@@ -35,38 +35,70 @@ include "database.php";
 <body>
 
 <?php
-$productnummer = $_SESSION['productnummer'];
 
-print_r($_POST);
 
-$stmt = $pdo->prepare("SELECT * FROM product WHERE productnummer = ?");
-$stmt ->execute(array($productnummer));
 
-while ($row = $stmt->fetch()) {
-    $naam = $row["naam"];
-    $prijs = $row["prijs"];
+
+$bestelnummer =+ 1;
+$emailadres = "testklant@gmail.com";
+$productnummer = $_GET['productnummer'];
+$aantal = $_GET['aantal'];
+$datum = date("Y-m-d H:i:s");
+$betaald = 0;
+
+public function productToevoegen($productnummer, $aantal) {
+    if (isset($_COOKIE['winkelwagen'])) {
+        $winkelwagen = json_decode($_COOKIE['winkelwagen']);
+    } else {
+        $winkelwagen = array();
+    }
+    $winkelwagen[] = array($productnummer, $aantal);
+    $aanmakenWinkelwagen = json_encode($winkelwagen);
+    setcookie('winkelwagen', $aanmakenWinkelwagen, time()+3600);
+}
+
+public function toonWinkelwagen()
+{
+    if (isset($_COOKIE['winkelwagen'])) {
+        $winkelwagen = $_COOKIE['winkelwagen'];
+    }
 
 }
+
+$stmt = $pdo->prepare("INSERT INTO bestelregel (bestelnummer, emailadres, productnummer, 
+aantal, datum, betaald) VALUES (:bestelnummer, :email, :pnummer, :aantal, :datum, :betaald)");
+
+$stmt->execute(array(
+    "bestelnummer" => $bestelnummer,
+    "email" => $emailadres,
+    "pnummer" => $productnummer,
+    "aantal" => $aantal,
+    "datum" => $datum,
+    "betaald" => $betaald,
+));
+
+echo $bestelnummer;
+
 ?>
 
 <div class="container">
     <div class="row">
         <table class="col-md-6 producten table">
             <tr>
-                <th>Product</th>
+                 <th>Product</th>
                 <th>Prijs</th>
                 <th>Aantal</th>
             </tr>
-
             <?php
-
-            echo "<tr>";
-            echo "<td>" . $naam . "</td>";
-            echo "<td>" . $prijs . " euro</td>";
-//            echo "<td>" . $aantal . "</td>";
-            echo "</tr>";
-
+            for ($i = 0; $i < count($items); $i++)
+                echo "<tr>";
+                echo "<td>" . $items['productnummer'] . "</td>";
+                echo "<td> 5 euro </td>";
+                echo "<td>" . $items['aantal'] . "</td>";
+                echo "</tr>";
             ?>
+
+
         </table>
         <div class="col-md-4 overzichtdiv">
             <table class="overzicht table">
