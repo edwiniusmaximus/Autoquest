@@ -29,7 +29,7 @@
     <?php
     
     include 'include/database.php';
-
+    $regist_array   = [];
     $errors         = [];
     $error_count    = 0;
     
@@ -40,6 +40,7 @@
 		$last_name = ($_POST['achternaam']);
 		$passw = ($_POST['wachtwoord']);
 		$pass_rep = ($_POST['wachtwoord2']);
+                $rechten = 1;
 
 		$query = $pdo->prepare("SELECT emailadres FROM account WHERE emailadres = :emailadres");
 		$query->execute(array(':emailadres' => $email));
@@ -48,57 +49,65 @@
 		if (count($result)) { // Controleer het email adres
 			$errors[] = 'Dit e-mailadres is al in gebruik.';
 			$error_count = 1;
-		} else {
-			if (empty($first_name)) {
+		} 
+			elseif (empty($first_name)) {
 				$errors[] = 'Vul a.u.b. uw voornaam in.';
 				$error_count = 1;
 			}
-			if (empty($last_name)) {
+			elseif (empty($last_name)) {
 				$errors[] = 'Vul a.u.b. uw achternaam in.';
 				$error_count = 1;
 			}
-			if (empty($email)) {
+			elseif (empty($email)) {
 				$errors[] = 'Vul a.u.b. uw e-mailadres in.';
 				$error_count = 1;
 			}
-			if (empty($passw)) {
+			elseif (empty($passw)) {
 				$errors[] = 'Vul a.u.b. een wachtwoord in.';
 				$error_count = 1;
 			}
-			if (empty($pass_rep)) {
+			elseif (empty($pass_rep)) {
 				$errors[] = 'Herhaal a.u.b. uw wachtwoord.';
 				$error_count = 1;
 			}
-		}
-		if (!ctype_alpha(str_replace(array(' ', "'", '-'), '', $first_name)) && !empty($first_name)) { // voornaam validator.
+		
+		elseif (!ctype_alpha(str_replace(array(' ', "'", '-'), '', $first_name)) && !empty($first_name)) { // voornaam validator.
 			$errors[] = 'Uw voornaam is niet geldig.';
 			$error_count = 1;
 			$first_name = '';
 		}
-		if (!ctype_alpha(str_replace(array(' ', "'", '-'), '', $last_name)) && !empty($first_name)) { // achternaam validator.
+		elseif (!ctype_alpha(str_replace(array(' ', "'", '-'), '', $last_name)) && !empty($first_name)) { // achternaam validator.
 			$errors[] = 'Uw achternaam is niet geldig.';
 			$error_count = 1;
 			$last_name = '';
 		}
-		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) { // Email validator.
+		elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) { // Email validator.
 			$errors[] = 'Uw e-mailadres is niet geldig.';
 			$error_count = 1;
 			$email = '';
 		}
-		if (!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,20}$/', $passw) && !empty($passw) && !empty($pass_rep)) { // Pass validator.
+		elseif (!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,20}$/', $passw) && !empty($passw) && !empty($pass_rep)) { // Pass validator.
 			$errors[] = 'Uw wachtwoord moet minimaal 1 teken en 1 nummer bevatten, tussen de 8 en 20 tekens lang zijn en mag alleen deze !@#$% speciale tekens bevatten.';
 			$error_count = 1;
 		}
-		if ($passw != $pass_rep) { // vergelijk passwords.
+		elseif ($passw != $pass_rep) { // vergelijk passwords.
 			$errors[] = 'De wachtwoorden komen niet overeen.';
 			$error_count = 1;
 		}
-                   
-		if ($error_count == 0) {
-			
-			$query = $pdo->prepare("INSERT INTO account (voornaam, achternaam, emailadres, wachtwoord, rechten) VALUES (:voornaam, :achternaam, :emailadres, :wachtwoord, :rechten, NOW())");
-			$query->execute(array(':voornaam' => $first_name, ':achternaam' => $last_name, ':emailadres' => $email, ':wachtwoord' => $passw, ':rechten' => 1));
+              
+		else{
+                        $regist_array[0] = $_POST['voornaam'];
+                        $regist_array[1] = $_POST['achternaam'];
+                        $regist_array[2] = $_POST['emailadres'];
+                        $regist_array[3] = $_POST['wachtwoord'];
+                        $regist_array[4] = 1;
+                        
+			$query = "INSERT INTO account (voornaam, achternaam, emailadres, wachtwoord, rechten) VALUES (?, ?, ?, ?, ?)";
+			$stmt = $pdo->prepare($query);
+			$stmt->execute($regist_array);
+                        print "U bent geregistreerd!";
 		}
+            
             
 	}
         
