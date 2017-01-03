@@ -17,7 +17,7 @@
 
         <?php
 // database include
-        include 'database.php';
+        include 'css/database.php';
 
 // navbar include
         include("../navigationbar/navigation.php");

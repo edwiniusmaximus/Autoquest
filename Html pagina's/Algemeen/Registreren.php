@@ -11,10 +11,10 @@
         <title>Registreren</title>
 
         <!-- Bootstrap core CSS -->
-        <link href="../bootstrap-files/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
-        <link href="../Algemeen/css/main.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
 
         
 
@@ -28,7 +28,7 @@
     <body>
     <?php
     
-    include '../Algemeen/include/database.php';
+    include 'include/database.php';
 
     $errors         = [];
     $error_count    = 0;
@@ -99,13 +99,14 @@
 			$query = $pdo->prepare("INSERT INTO account (voornaam, achternaam, emailadres, wachtwoord, rechten) VALUES (:voornaam, :achternaam, :emailadres, :wachtwoord, :rechten, NOW())");
 			$query->execute(array(':voornaam' => $first_name, ':achternaam' => $last_name, ':emailadres' => $email, ':wachtwoord' => $passw, ':rechten' => 1));
 		}
+            
 	}
         
 	?>
 
 
     <!--navigatiebar-->
-    <?php include("../navigationbar/navigation.php"); ?>
+    <?php include("include/navigation.php"); ?>
 
         <div class="container">
 			<?php
@@ -140,6 +141,6 @@
         </div>
 
 
-    <?php include("../navigationbar/Footer.php"); ?>
+    <?php include("include/Footer.php"); ?>
     </body>
 </html>
