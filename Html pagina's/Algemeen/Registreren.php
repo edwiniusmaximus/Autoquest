@@ -26,7 +26,11 @@
     </head>
 
     <body>
+        
     <?php
+    //navigatiebar
+    include 'include/navigation.php';
+    
     
     include 'include/database.php';
     $regist_array   = [];
@@ -105,7 +109,7 @@
 			$query = "INSERT INTO account (voornaam, achternaam, emailadres, wachtwoord, rechten) VALUES (?, ?, ?, ?, ?)";
 			$stmt = $pdo->prepare($query);
 			$stmt->execute($regist_array);
-                        print "U bent geregistreerd!";
+                        print "U bent geregistreerd! Klik op 'Inloggen' in de navigatiebalk om in te loggen!";
 		}
             
             
@@ -114,8 +118,7 @@
 	?>
 
 
-    <!--navigatiebar-->
-    <?php include("include/navigation.php"); ?>
+    
 
         <div class="container">
 			<?php
@@ -131,19 +134,19 @@
                 <h2 class="form-signin-heading">Registreren</h2>
                         <!-- Voorletters -->
                         <label for="Emailadres" class="sr-only">Emailadres</label>
-                        <input name="emailadres" type="email" id="emailadres" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Emailadres" required><?= (isset($email))? $email:'' ?> <br>
+                        <input name="emailadres" type="email" id="emailadres" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Emailadres" required><br>
                         <!-- Voornaam -->
                         <label for="Voornaam" class="sr-only">Voornaam</label>
-                        <input name="voornaam" type="text" id="voornaam" class="form-control" placeholder="Voornaam" required><?= (isset($first_name))? $first_name:'' ?> <br>
+                        <input name="voornaam" type="text" id="voornaam" class="form-control" placeholder="Voornaam" required><br>
                         <!-- Achternaam -->
                         <label for="Achternaam" class="sr-only">Achternaam</label>
-                        <input name="achternaam" type="text" id="achternaam" class="form-control" placeholder="Achternaam" required autofocus><?= (isset($last_name))? $last_name:'' ?> <br>
+                        <input name="achternaam" type="text" id="achternaam" class="form-control" placeholder="Achternaam" required autofocus><br>
                         <!-- Wachtwoord -->
                         <label for="Wachtwoord" class="sr-only">Wachtwoord</label>
-                        <input name="wachtwoord" type="password" id="wachtwoord" class="form-control" placeholder="Wachtwoord" required autofocus><?= (isset($passw))? $passw:'' ?> <br>
+                        <input name="wachtwoord" type="password" id="wachtwoord" class="form-control" placeholder="Wachtwoord" required autofocus><br>
                         <!-- Wachtwoord -->
                         <label for="Wachtwoord2" class="sr-only">Verifieer Wachtwoord</label>
-                        <input name="wachtwoord2" type="password" id="wachtwoord2" class="form-control" placeholder="Verifieer wachtwoord" required autofocus><?= (isset($pass_rep))? $pass_rep:'' ?> <br>
+                        <input name="wachtwoord2" type="password" id="wachtwoord2" class="form-control" placeholder="Verifieer wachtwoord" required autofocus><br>
                         <!-- Button Registreren -->
                         <button id="RegisButton" class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Registreren</button>
             </form>

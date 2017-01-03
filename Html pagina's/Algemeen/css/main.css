@@ -54,6 +54,7 @@
 
 }
 
+/* Registreer pagina */
 .form-signin {
     max-width: 330px;
     padding: 15px;
@@ -92,6 +93,9 @@
     background-color: #176c48;
     max-width: 330px;
 
+}
+.regist-bericht{
+    text-align: center;
 }
 
 /*aanbodpagina*/
