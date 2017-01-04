@@ -15,7 +15,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Admin Panel</title>
+        <title>Gebruikers profiel</title>
 
         <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -45,10 +45,13 @@
                                 <table class="table table-user-information">
                                     <tbody>
                                         <?php
+                                        // $user is ingelogde gebruiker, query zoekt naar gebruiker in database.
                                         $user = $_SESSION['emailadres'];
                                         $sql = 'select * from klant where emailadres = :user';
                                         $stmt = $pdo->prepare($sql);
-                                        $stmt->setFetchMode(PDO::FETCH_ASSOC); //allows you to refer to them by column name rather than by number
+                                        // Leest alleen onderstaande variable.
+                                        $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+                                        // Verwijzing naar gebruiker.
                                         $stmt->execute(array('user'=>$user));
                                         
                                         while ($row = $stmt->fetch()) {
@@ -62,7 +65,6 @@
                                         $bhuisnummer = $row["b_huisnummer"];
                                         $bpostcode = $row["b_postcode"];
                                         $telefoonnummer = $row["telefoonnummer"];
-                                        print_r($row);
                                         
                                         print "<form method='POST'>";
                                         print "<tr><h3>Gebruikers profiel:</h3></tr>";
@@ -112,7 +114,7 @@
                                         print "<td>" . "<input type='text' name='telefoonnummer' value='$telefoonnummer'" . "</td>";
                                         print "</tr>";
                                         print "<td></td>";
-                                        print "<td>" . "<input type='submit' class='btn btn-primary' value='update' name='update'></input>" . "</td>";
+                                        print "<td>" . "<input type='submit' class='btn btn-primary' value='Opslaan' name='update'></input>" . "</td>";
                                         print "</tr>";
                                         print "</form>";
                                         }
@@ -120,8 +122,8 @@
                                         // update woonplaats, straatnaam, huisnummer, postcode, bedrijfsnaam, bwoonplaats, bstraatnaam, bhuisnummer, bpostcode, telefoonnummer.
                                         $stmt = $pdo->prepare("UPDATE klant set f_woonplaats = ?, f_straatnaam = ?, f_huisnummer = ?, f_postcode = ?, bedrijfsnaam = ?, b_woonplaats = ?, b_straatnaam = ?, b_huisnummer = ?, b_postcode = ?, telefoonnummer = ? WHERE emailadres = ?"); 
                                         // vraag alle klanten waar de searchstring in voorkomt
-                                        $stmt->execute([$_POST['f_woonplaats'], $_POST['f_straatnaam'], $_POST['f_huisnummer'], $_POST['f_postcode'], $_POST['bedrijfsnaam'],  $_POST['b_woonplaats'], $_POST['b_straatnaam'], $_POST['b_huisnummer'], $_POST['b_postcode'], $_POST['telefoonnummer'], $_POST['emailadres']]);
-                                        }                              
+                                        $stmt->execute([$_POST['f_woonplaats'], $_POST['f_straatnaam'], $_POST['f_huisnummer'], $_POST['f_postcode'], $_POST['bedrijfsnaam'],  $_POST['b_woonplaats'], $_POST['b_straatnaam'], $_POST['b_huisnummer'], $_POST['b_postcode'], $_POST['telefoonnummer'], $_SESSION['emailadres']]);
+                                        }                            
                                         ?>
                                     </tbody>
                                 </table>
@@ -133,7 +135,7 @@
         </div>
     </div>
 <?php
-//footer
+//footer tijdelijk als comment, footer staat in de weg, kan niet scrollen.
 //include("include/footer.php");
 ?>
 </body>
