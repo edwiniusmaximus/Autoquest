@@ -10,7 +10,7 @@
             </button>
 
             <!--logo placeholder-->
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.php">
                 <!-- Tijdelijke Tekst -->
                 <p style="color: white">Autoquest</p>
             </a>
@@ -19,7 +19,7 @@
         <!--auto-onderdelen -->
         <div class="nav-items navbar-left navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="#">Auto-onderdelen</a></li>
+                <li><a href="aanbodpagina.php">Auto-onderdelen</a></li>
             </ul>
         </div>
 
@@ -29,7 +29,7 @@
                 <?php
                 // Geeft weer als iemand ingelogd is en anders de optie om te registreren.
                 if (isset($_SESSION['emailadres'])) {
-                    print "<li><a href='#'>" . $_SESSION['emailadres'] . "</a></li>";
+                    print "<li><a href='profilepage.php'>" . $_SESSION['emailadres'] . "</a></li>";
                     print "<li><a href='logout.php'><span>Logout</span></a></li>";
                 } else {
                     print"<li><a href='login.php'><span>Login</span></a></li>";
