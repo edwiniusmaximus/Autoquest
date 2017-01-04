@@ -70,7 +70,7 @@
                     $bhuisnummer = $row["b_huisnummer"];
                     $bpostcode = $row["b_postcode"];
                     $telefoonnummer = $row["telefoonnummer"];
-                    print_r($row);
+                    
                     print "<form method='POST'>";
                     print "<tr>";
                     print "<td>" . "<input type='text' name='emailadres' value='$emailadres'</input>" . "</td>";

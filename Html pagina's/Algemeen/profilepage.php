@@ -34,14 +34,6 @@
 
         //adminpanel navbar
         include("include/navigation.php");
-
-        //print "<tr>";
-        //if (isset($_SESSION['emailadres'])) {
-        //    print "<td>Emailadres:</td>";
-        //    print "<td>" . $_SESSION['emailadres'] . "</td";
-        //} else {
-        //    print"<li>login om deze pagina te weergeven.</li>";
-        //}
         ?>
 
         <div class="container">
@@ -53,13 +45,13 @@
                                 <table class="table table-user-information">
                                     <tbody>
                                         <?php
-                                        $sql = 'select * from klant order by emailadres';
+                                        $user = $_SESSION['emailadres'];
+                                        $sql = 'select * from klant where emailadres = :user';
                                         $stmt = $pdo->prepare($sql);
                                         $stmt->setFetchMode(PDO::FETCH_ASSOC); //allows you to refer to them by column name rather than by number
-                                        $stmt->execute();
+                                        $stmt->execute(array('user'=>$user));
                                         
                                         while ($row = $stmt->fetch()) {
-                                        $emailadres = $row["emailadres"];
                                         $fwoonplaats = $row["f_woonplaats"];
                                         $fstraatnaam = $row["f_straatnaam"];
                                         $fhuisnummer = $row["f_huisnummer"];
@@ -70,12 +62,13 @@
                                         $bhuisnummer = $row["b_huisnummer"];
                                         $bpostcode = $row["b_postcode"];
                                         $telefoonnummer = $row["telefoonnummer"];
+                                        print_r($row);
                                         
                                         print "<form method='POST'>";
                                         print "<tr><h3>Gebruikers profiel:</h3></tr>";
                                         print "<tr>";
                                         print "<td>Emailadres:</td>";
-                                        print "<td>" . $_SESSION['emailadres'] . "</td>";
+                                        print "<td>" . $user . "</td>";
                                         print "</tr>";
                                         print "<tr>";
                                         print "<td>Woonplaats:</td>";
@@ -124,10 +117,10 @@
                                         print "</form>";
                                         }
                                         if (isset($_POST['update'])) {
-                                        // update emailadres, bedrijfsnaam, woonplaats, straatnaam, huisnummer, postcode, bwoonplaats, bstraatnaam, bhuisnummer, bpostcode, telefoonnummer.
-                                        $stmt = $pdo->prepare("UPDATE klant set  emailadres = ?, bedrijfsnaam = ?, f_woonplaats = ?, f_straatnaam = ?, f_huisnummer = ?, f_postcode = ?, b_woonplaats = ?, b_straatnaam = ?, b_huisnummer = ?, b_postcode = ?, telefoonnummer = ? WHERE emailadres = ?");
+                                        // update woonplaats, straatnaam, huisnummer, postcode, bedrijfsnaam, bwoonplaats, bstraatnaam, bhuisnummer, bpostcode, telefoonnummer.
+                                        $stmt = $pdo->prepare("UPDATE klant set f_woonplaats = ?, f_straatnaam = ?, f_huisnummer = ?, f_postcode = ?, bedrijfsnaam = ?, b_woonplaats = ?, b_straatnaam = ?, b_huisnummer = ?, b_postcode = ?, telefoonnummer = ? WHERE emailadres = ?"); 
                                         // vraag alle klanten waar de searchstring in voorkomt
-                                        $stmt->execute([$_POST['emailadres'], $_POST['bedrijfsnaam'], $_POST['f_woonplaats'], $_POST['f_straatnaam'], $_POST['f_huisnummer'], $_POST['f_postcode'], $_POST['b_woonplaats'], $_POST['b_straatnaam'], $_POST['b_huisnummer'], $_POST['b_postcode'], $_POST['telefoonnummer'], $_POST['emailadres']]);
+                                        $stmt->execute([$_POST['f_woonplaats'], $_POST['f_straatnaam'], $_POST['f_huisnummer'], $_POST['f_postcode'], $_POST['bedrijfsnaam'],  $_POST['b_woonplaats'], $_POST['b_straatnaam'], $_POST['b_huisnummer'], $_POST['b_postcode'], $_POST['telefoonnummer'], $_POST['emailadres']]);
                                         }                              
                                         ?>
                                     </tbody>
