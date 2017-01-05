@@ -8,7 +8,7 @@
         <title>Bootstrap 101 Template</title>
 
         <!-- Bootstrap -->
-        <link href="../bootstrap-files/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/main.css" rel="stylesheet">
 
 
@@ -17,10 +17,10 @@
 
         <?php
 // database include
-        include 'css/database.php';
+        include 'include/database.php';
 
 // navbar include
-        include("../navigationbar/navigation.php");
+        include("include/navigation.php");
 
         $query = "SELECT * FROM product";
         $temp_array = [];
@@ -145,7 +145,7 @@
                         ?>
                     <div class="container" class="aanbod-image">
                         <?php
-                        echo "<td class='col-md-2'><img src=\"img-" . $productnummer . ".png\"></td>";
+                        echo "<td class='col-md-2'><img src='images\img-" . $productnummer . ".jpg'></td>";
                         ?>
                 </div>
                 <?php
@@ -158,7 +158,7 @@
     </div>
 </div>
 
-<?php include("../navigationbar/Footer.php"); ?>
+<?php include("include/Footer.php"); ?>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="css/https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

@@ -1,4 +1,5 @@
 
+
 .topbar {
     background-color: #176c48;
     padding: 0;
@@ -6,20 +7,27 @@
 
 .navbar{
     color:white;
-   
+}
+
+.jumbotron{
+    background-image: url("http://img.autobytel.com/car-reviews/autobytel/11694-good-looking-sports-cars/2016-Ford-Mustang-GT-burnout-red-tire-smoke.jpg");
 }
 
 /*slider*/
 .slider{
     width: 100%;
 }
-
+#carousel-example {
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
 .carousel .item {
     height: 350px;
 }
 
 .item img {
-    height: 350px;
+    height: 3500px;
 }
 
 .fade-carousel .carousel-inner .item .hero {
@@ -40,6 +48,13 @@
     transition: 2s all ease-in-out .1s;
 }
 
+/*hometekst{
+    border: 2px solid black;
+    padding: 13px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px #888888;
+}
+*/
 .footerinfo ul li a {
      color: white;
  }
@@ -48,11 +63,10 @@
     color: #176c48;
 }
 
-.footer {
+#footer {
     background-color: #176c48;
     font-size: 1em;
     color: white;
-   
 
 }
 
@@ -187,7 +201,7 @@
 .aanbod-image img {
     width: 30px;
     height: 30px;
-    
+
 }
 
 /*itempage*/
@@ -262,4 +276,3 @@
 .myrow p:last-child {
     margin-bottom: 0; /* optional */
 }
-

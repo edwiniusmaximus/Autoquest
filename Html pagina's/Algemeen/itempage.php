@@ -7,7 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>cpanel - klanten</title>
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="../bootstrap-files/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
     <!-- Custom styles for this template -->
     <!--    <link href="css/main.css" rel="stylesheet">-->
@@ -17,10 +17,10 @@
 session_start();
 
 // navbar include
-include("../navigationbar/navigation.php");
+include("include/navigation.php");
 
 // database include
-include 'database.php';
+include 'include/database.php';
 
 $productnummer = $_GET["rowid"];
 $stmt = $pdo->prepare("SELECT * FROM product WHERE productnummer = ?");

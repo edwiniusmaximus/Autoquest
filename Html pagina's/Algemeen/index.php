@@ -8,8 +8,8 @@
     <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
-    <link href="../bootstrap-files/bootstrap.min.css" rel="stylesheet">
-    <link href="../Algemeen/css/main.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -22,7 +22,7 @@
 <body>
 
 <!--navigatiebar-->
-<?php include("../navigationbar/navigation.php");
+<?php include("include/navigation.php");
 ?>
 
 <!--header-->
@@ -37,15 +37,15 @@
 
             <div class="carousel-inner">
                 <div class="item active">
-                    <a href="#"><img src="garage.jpg" /></a>
+                    <a href="#"><img src="images/garage.jpg" /></a>
 
                 </div>
                 <div class="item">
-                    <a href="#" class="picture"><img src="components.jpg"/></a>
+                    <a href="#" class="picture"><img src="images/components.jpg"/></a>
 
                 </div>
                 <div class="item">
-                    <a href="#"><img src="engine.jpg" /></a>
+                    <a href="#"><img src="images/engine.jpg" /></a>
 
                 </div>
             </div>
@@ -101,6 +101,6 @@
     </div>
 </div>
 
-<?php include("../navigationbar/Footer.php"); ?>
+<?php include("include/Footer.php"); ?>
 </body>
 </html>
