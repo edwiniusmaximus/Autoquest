@@ -25,15 +25,19 @@
 
     </head>
     <body>
-        <?php
+        <?php      
+        
         //database connectie
         include("../include/database.php");
 
         //cookies
         include("../include/cookies.php");
+        
+        beheerder($rechten->rechten);
 
         //adminpanel navbar
         include("../include/apanelnav.php");
+        
         ?>
         <div class="klanten-container">
             <table class="klanten-overview">
@@ -49,7 +53,7 @@
                     <th>Bedrijf huisnummer</th>
                     <th>Bedrijf postcode</th>
                     <th>Telefoonnummer</th>
-                    <th>Update</th>
+                    <th>Opslaan</th>
                     <th>Delete</th>
                 </tr>
                 <?php
@@ -84,13 +88,13 @@
                     print "<td>" . "<input type='text' name='b_huisnummer' value='$bhuisnummer'</input>" . "</td>";
                     print "<td>" . "<input type='text' name='b_postcode' value='$bpostcode'</input>" . "</td>";
                     print "<td>" . "<input type='text' name='telefoonnummer' value='$telefoonnummer'" . "</td>";
-                    print "<td>" . "<input type='submit' value='update' name='update'></input>" . "</td>";
+                    print "<td>" . "<input type='submit' value='opslaan' name='opslaan'></input>" . "</td>";
                     print "<td>" . "<input type='submit' value='delete' name='delete'></input>" . "</td>";
                     print "</tr>";
                     print "</form>";
                 }
 
-                if (isset($_POST['update'])) {
+                if (isset($_POST['opslaan'])) {
                     // update emailadres, bedrijfsnaam, woonplaats, straatnaam, huisnummer, postcode, bwoonplaats, bstraatnaam, bhuisnummer, bpostcode, telefoonnummer.
                     $stmt = $pdo->prepare("UPDATE klant set  emailadres = ?, bedrijfsnaam = ?, f_woonplaats = ?, f_straatnaam = ?, f_huisnummer = ?, f_postcode = ?, b_woonplaats = ?, b_straatnaam = ?, b_huisnummer = ?, b_postcode = ?, telefoonnummer = ? WHERE emailadres = ?");
                     // vraag alle klanten waar de searchstring in voorkomt
